@@ -1,20 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
+import {
+  Section,
+  SectionTitle,
+} from '../components/Section';
+
 import picHosono from '../images/pic_hosono.jpg';
 import picMail from '../images/pic_mail.png';
 
 const Contact: React.FC = () => {
   return (
-    <>
-      <h2 className="sect__ttl">
+    <Section>
+      <SectionTitle>
         Contact
-      </h2>
-      <figure className="sect__pic">
-        <img src={picHosono} alt="細野" className="sect__pic-img" />
-      </figure>
-      <h3 className="sect__ttl-name">
+      </SectionTitle>
+      <Figure>
+        <img src={picHosono} alt="細野" />
+      </Figure>
+      <TitleName>
         HOSONO KOTARO
-      </h3>
-      <p className="sect__txt-detail">
+      </TitleName>
+      <TextDetail>
         <ruby>細野 広太郎<rt>ほその こうたろう</rt></ruby><br />
         1985年生まれ<br />
         <br />
@@ -24,12 +30,51 @@ const Contact: React.FC = () => {
         <br />
         好きな言葉は「<ruby>色即是空<rt>しきそくぜくう</rt></ruby>」<br />
         <br />
-        <a href="mail">
-          <img className="sect__pic-mail" src={picMail} alt="Mail" />
+        <a href="mailto:hosono1985@gmail.com">
+          <IcomMail src={picMail} alt="Mail" />
         </a>
-      </p>
-    </>
+      </TextDetail>
+    </Section>
   );
 }
+
+const Figure = styled.figure`
+  position: relative;
+  width: 180px;
+  margin: 0 auto;
+  padding-top: 2em;
+
+  img {
+    width: 100%;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+`;
+
+const TitleName = styled.h3`
+  padding-top: 0.8em;
+  line-height: 1;
+  font-size: 1.8rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+  }
+`;
+
+const TextDetail = styled.p`
+  padding-top: 2em;
+  font-size: 1.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
+
+const IcomMail = styled.img`
+  width: 25px;
+`;
 
 export default Contact;

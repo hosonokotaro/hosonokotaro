@@ -23,11 +23,15 @@ const MenuItem: React.FC<MenuLinkProps> = (props) => {
     <Item>
       <ItemLink
         to={props.to}
-        className="navi__link"
       >
         <picture>
-          <source srcSet={match ? props.currentImagePath : props.imagePath} media="(min-width: 768px)" />
-          <source srcSet={match ? props.currentImagePath + ' 2x' : props.imagePath + ' 2x'} />
+          <source
+            srcSet={match ? props.currentImagePath : props.imagePath}
+            media="(min-width: 768px)"
+          />
+          <source
+            srcSet={match ? props.currentImagePath + ' 2x' : props.imagePath + ' 2x'}
+          />
           <img
             src={match ? props.currentImagePath : props.imagePath}
             alt={props.label}

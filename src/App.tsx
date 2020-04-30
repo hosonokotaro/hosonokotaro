@@ -59,7 +59,7 @@ const App: React.FC = () => {
           />
         </MenuList>
       </Menu>
-      <article>
+      <Article>
         <Switch>
           <Route exact path="/">
             <Top />
@@ -71,7 +71,7 @@ const App: React.FC = () => {
             <Contact />
           </Route>
         </Switch>
-      </article>
+      </Article>
       <Footer>
         © { new Date().getFullYear() } HOSONO KOTARO
       </Footer>
@@ -93,17 +93,30 @@ const MenuList = styled.ul`
   display: flex;
   justify-content: center;
   height: 100%;
+  margin-top: -5px;
   border-bottom: 1px solid #333;
 `;
 
+const Article = styled.article`
+  min-height: calc(100vh - 102px - 53px);
+  padding-bottom: 40px;
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 167px - 53px);
+  }
+`;
+
 const Footer = styled.footer`
-  margin: 40px 0 0 0;
   padding: 20px 0;
   line-height: 1;
   text-align: center;
   border-top: 1px solid #333;
   font-size: 1.2rem;
   color: #000;
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export default App;
