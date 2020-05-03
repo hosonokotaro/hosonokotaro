@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components';
 
-type MenuLinkProps = {
+type MenuItemProps = {
   label: string,
   imagePath: string,
   currentImagePath: string,
@@ -13,7 +13,7 @@ type MenuLinkProps = {
   active: boolean,
 }
 
-const MenuItem: React.FC<MenuLinkProps> = (props) => {
+const MenuItem: React.FC<MenuItemProps> = (props) => {
   const match = useRouteMatch({
     path: props.to,
     exact: props.active,
