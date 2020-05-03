@@ -1,21 +1,16 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-
 import {
   siteTitle,
   siteUrl,
   siteDescription,
 } from './components/SiteSetting';
-import Top from './pages/Top';
-import Work from './pages/Work';
-import Contact from './pages/Contact';
 import MenuItem from './components/MenuItem';
+import RouteParam from './RouteParam';
 
 import txtHeadTtl from './images/txt_head_ttl.png';
 import txtNavTop from './images/txt_nav_top.png';
@@ -77,19 +72,7 @@ const App: React.FC = () => {
             />
           </MenuList>
         </Menu>
-        <Article>
-          <Switch>
-            <Route exact path="/">
-              <Top />
-            </Route>
-            <Route path="/work">
-              <Work />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-        </Article>
+        <RouteParam />
         <Footer>
           © { new Date().getFullYear() } HOSONO KOTARO
         </Footer>
@@ -114,15 +97,6 @@ const MenuList = styled.ul`
   height: 100%;
   margin-top: -5px;
   border-bottom: 1px solid #333;
-`;
-
-const Article = styled.article`
-  min-height: calc(100vh - 102px - 53px);
-  padding-bottom: 40px;
-
-  @media (min-width: 768px) {
-    min-height: calc(100vh - 167px - 53px);
-  }
 `;
 
 const Footer = styled.footer`
