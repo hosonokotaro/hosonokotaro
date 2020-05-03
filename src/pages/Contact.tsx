@@ -44,12 +44,20 @@ const Figure = styled.figure`
   margin: 0 auto;
   padding-top: 2em;
 
+  @media (min-width: 768px) {
+    width: 360px;
+  }
+
   img {
     width: 100%;
     height: 180px;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
+
+    @media (min-width: 768px) {
+      height: 360px;
+    }
   }
 `;
 
@@ -75,6 +83,10 @@ const TextDetail = styled.p`
 
 const IcomMail = styled.img`
   width: 25px;
+  
+  @media (min-width: 768px) {
+    width: auto;
+  }
 `;
 
 export default Contact;
