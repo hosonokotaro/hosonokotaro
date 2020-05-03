@@ -1,5 +1,7 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import { siteTitle } from '../components/SiteSetting';
 import {
   Section,
   SectionTitle,
@@ -10,31 +12,36 @@ import picMail from '../images/pic_mail.png';
 
 const Contact: React.FC = () => {
   return (
-    <Section>
-      <SectionTitle>
-        Contact
-      </SectionTitle>
-      <Figure>
-        <img src={picHosono} alt="細野" />
-      </Figure>
-      <TitleName>
-        HOSONO KOTARO
-      </TitleName>
-      <TextDetail>
-        <ruby>細野 広太郎<rt>ほその こうたろう</rt></ruby><br />
-        1985年生まれ<br />
-        <br />
-        東京でフロントエンドエンジニアとして、ミレニアル世代のフリーランスとして活動している。<br />
-        <br />
-        大手企業などのサイトを受託案件として多数手がける。個人としては、アニメーション制作会社、個人経営の本屋さんのサイトも手がける。<br />
-        <br />
-        好きな言葉は「<ruby>色即是空<rt>しきそくぜくう</rt></ruby>」<br />
-        <br />
-        <a href="mailto:hosono1985@gmail.com">
-          <IcomMail src={picMail} alt="Mail" />
-        </a>
-      </TextDetail>
-    </Section>
+    <>
+      <Helmet>
+        <title>CONTACT | {siteTitle}</title>
+      </Helmet>
+      <Section>
+        <SectionTitle>
+          Contact
+        </SectionTitle>
+        <Figure>
+          <img src={picHosono} alt="細野" />
+        </Figure>
+        <TitleName>
+          HOSONO KOTARO
+        </TitleName>
+        <TextDetail>
+          <ruby>細野 広太郎<rt>ほその こうたろう</rt></ruby><br />
+          1985年生まれ<br />
+          <br />
+          東京でフロントエンドエンジニアとして、ミレニアル世代のフリーランスとして活動している。<br />
+          <br />
+          大手企業などのサイトを受託案件として多数手がける。個人としては、アニメーション制作会社、個人経営の本屋さんのサイトも手がける。<br />
+          <br />
+          好きな言葉は「<ruby>色即是空<rt>しきそくぜくう</rt></ruby>」<br />
+          <br />
+          <a href="mailto:hosono1985@gmail.com">
+            <IcomMail src={picMail} alt="Mail" />
+          </a>
+        </TextDetail>
+      </Section>
+    </>
   );
 }
 

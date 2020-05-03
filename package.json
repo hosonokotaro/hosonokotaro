@@ -10,19 +10,23 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^5.0.15",
     "@types/react-router-dom": "^5.1.4",
     "@types/styled-components": "^5.1.0",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-snap": "^1.23.0",
     "styled-components": "^5.1.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": "react-app"

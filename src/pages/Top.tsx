@@ -1,5 +1,7 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import { siteTitle } from '../components/SiteSetting';
 import Twitter from '../components/Twitter';
 import {
   Section,
@@ -13,6 +15,9 @@ import picKitakuBg from '../images/pic_kitaku_bg.jpg';
 const Top: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>TOP | {siteTitle}</title>
+      </Helmet>
       <FirstView>
         <figure>
           <img src={picKitaku} alt="北区" />

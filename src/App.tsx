@@ -4,8 +4,14 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 
+import {
+  siteTitle,
+  siteUrl,
+  siteDescription,
+} from './components/SiteSetting';
 import Top from './pages/Top';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
@@ -18,64 +24,77 @@ import txtNavWork from './images/txt_nav_work.png';
 import txtNavWorkActive from './images/txt_nav_work_active.png';
 import txtNavContact from './images/txt_nav_contact.png';
 import txtNavContactActive from './images/txt_nav_contact_active.png';
+import ogImage from './images/og.png';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <header>
-        <Title>
-          <picture>
-            <source srcSet={txtHeadTtl} media="(min-width: 768px)" />
-            <source srcSet={txtHeadTtl + ' 2x'} />
-            <img
-              src={txtHeadTtl}
-              alt="WebDeveloper hosonokotaro"
+    <>
+      <Helmet>
+        <link rel="canonical" href={siteUrl} />
+        <meta name="description" content={siteDescription} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:description" content={siteDescription} />
+        <title>{siteTitle}</title>
+      </Helmet>
+      <Router>
+        <header>
+          <Title>
+            <picture>
+              <source srcSet={txtHeadTtl} media="(min-width: 768px)" />
+              <source srcSet={txtHeadTtl + ' 2x'} />
+              <img
+                src={txtHeadTtl}
+                alt="WebDeveloper hosonokotaro"
+              />
+            </picture>
+          </Title>
+        </header>
+        <Menu>
+          <MenuList>
+            <MenuItem
+              active={true}
+              to="/"
+              imagePath={txtNavTop}
+              currentImagePath={txtNavTopActive}
+              label="Top"
             />
-          </picture>
-        </Title>
-      </header>
-      <Menu>
-        <MenuList>
-          <MenuItem
-            active={true}
-            to="/"
-            imagePath={txtNavTop}
-            currentImagePath={txtNavTopActive}
-            label="Top"
-          />
-          <MenuItem
-            active={false}
-            to="/work/"
-            imagePath={txtNavWork}
-            currentImagePath={txtNavWorkActive}
-            label="Work"
-          />
-          <MenuItem
-            active={false}
-            to="/contact/"
-            imagePath={txtNavContact}
-            currentImagePath={txtNavContactActive}
-            label="Contact"
-          />
-        </MenuList>
-      </Menu>
-      <Article>
-        <Switch>
-          <Route exact path="/">
-            <Top />
-          </Route>
-          <Route path="/work">
-            <Work />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
-      </Article>
-      <Footer>
-        © { new Date().getFullYear() } HOSONO KOTARO
-      </Footer>
-    </Router>
+            <MenuItem
+              active={false}
+              to="/work/"
+              imagePath={txtNavWork}
+              currentImagePath={txtNavWorkActive}
+              label="Work"
+            />
+            <MenuItem
+              active={false}
+              to="/contact/"
+              imagePath={txtNavContact}
+              currentImagePath={txtNavContactActive}
+              label="Contact"
+            />
+          </MenuList>
+        </Menu>
+        <Article>
+          <Switch>
+            <Route exact path="/">
+              <Top />
+            </Route>
+            <Route path="/work">
+              <Work />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </Article>
+        <Footer>
+          © { new Date().getFullYear() } HOSONO KOTARO
+        </Footer>
+      </Router>
+    </>
   );
 };
 
