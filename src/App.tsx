@@ -8,6 +8,7 @@ import {
   siteTitle,
   siteUrl,
   siteDescription,
+  siteTwitterSite,
 } from './components/SiteSetting';
 import MenuItem from './components/MenuItem';
 import RouteParam from './RouteParam';
@@ -27,6 +28,8 @@ const App: React.FC = () => {
       <Helmet>
         <link rel="canonical" href={siteUrl} />
         <meta name="description" content={siteDescription} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={siteTwitterSite} />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
