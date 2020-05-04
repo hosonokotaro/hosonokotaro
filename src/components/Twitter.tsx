@@ -11,7 +11,11 @@ const Twitter: React.FC = () => {
     scriptTag.src = 'https://platform.twitter.com/widgets.js';
     scriptTag.charset = 'utf-8';
 
-    document.getElementById('twitter')?.appendChild(scriptTag);
+    const showTimeLine = setTimeout(() => {
+      document.getElementById('twitter')?.appendChild(scriptTag);
+    }, 300);
+
+    return () => clearTimeout(showTimeLine);
   });
 
   return (
