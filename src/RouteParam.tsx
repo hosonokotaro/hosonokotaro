@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Switch,
   Route,
@@ -16,6 +16,13 @@ import Contact from './pages/Contact';
 
 const RouteParam = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
 
   return (
     <Article>
