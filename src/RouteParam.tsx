@@ -30,7 +30,7 @@ const RouteParam = () => {
         <CSSTransition
           key={location.key}
           classNames="route"
-          timeout={300}
+          timeout={600}
         >
           <Switch location={location}>
             <Route exact path="/">
@@ -71,14 +71,15 @@ const Transition = styled.div`
   position: relative;
   letter-spacing: 0;
   opacity: 1;
-  transform-origin: top center;
-  transition: all 0.3s ease;
+  transform-origin: center center;
+  transition: all 0.6s ease;
 
   &.route-enter {
     letter-spacing: 3em;
     opacity: 0;
     filter: blur(16px);
     transform: scale(1.9) rotate(15deg);
+    transition-delay: 0.3s;
   }
   &.route-enter-active {
     letter-spacing: 0;
