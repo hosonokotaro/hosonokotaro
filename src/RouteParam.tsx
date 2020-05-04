@@ -49,6 +49,8 @@ const RouteParam = () => {
 };
 
 const Article = styled.article`
+  overflow: hidden;
+  max-width: 100%;
   min-height: calc(100vh - 102px - 53px);
   padding-bottom: 40px;
 
@@ -59,15 +61,26 @@ const Article = styled.article`
 
 const Transition = styled.div`
   letter-spacing: 0;
+  opacity: 1;
   transform-origin: top center;
   transition: all 0.3s ease;
 
   &.route-enter {
     letter-spacing: 3em;
+    opacity: 0;
+    filter: blur(16px);
     transform: scale(1.9) rotate(15deg);
   }
-  &.route-exit {
+  &.route-enter-active {
+    letter-spacing: 0;
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) rotate(0deg);
+  }
+  &.route-exit-active {
     letter-spacing: 3em;
+    opacity: 0;
+    filter: blur(16px);
     transform: scale(0.1) rotate(-15deg);
   }
 `;
