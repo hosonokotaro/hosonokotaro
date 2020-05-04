@@ -5,7 +5,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import {
-  SwitchTransition,
+  TransitionGroup,
   CSSTransition,
 } from 'react-transition-group';
 import styled from 'styled-components';
@@ -19,7 +19,7 @@ const RouteParam = () => {
 
   return (
     <Article>
-      <SwitchTransition mode="out-in">
+      <TransitionGroup component={null}>
         <CSSTransition
           key={location.key}
           classNames="route"
@@ -43,7 +43,7 @@ const RouteParam = () => {
             </Route>
           </Switch>
         </CSSTransition>
-      </SwitchTransition>
+      </TransitionGroup>
     </Article>
   );
 };
@@ -60,6 +60,7 @@ const Article = styled.article`
 `;
 
 const Transition = styled.div`
+  position: relative;
   letter-spacing: 0;
   opacity: 1;
   transform-origin: top center;
@@ -78,10 +79,13 @@ const Transition = styled.div`
     transform: scale(1) rotate(0deg);
   }
   &.route-exit-active {
+    position: absolute;
+    top: 0;
     letter-spacing: 3em;
     opacity: 0;
     filter: blur(16px);
     transform: scale(0.1) rotate(-15deg);
+    pointer-events: none;
   }
 `;
 
