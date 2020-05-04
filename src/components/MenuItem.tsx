@@ -23,6 +23,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     <Item>
       <ItemLink
         to={props.to}
+        className={match ? 'link-current' : ''}
       >
         <picture>
           <source
@@ -60,6 +61,10 @@ const Item = styled.li`
 const ItemLink = styled(Link)`
   display: inline-block;
   line-height: 4;
+
+  &.link-current {
+    pointer-events: none;
+  }
 `;
 
 export default MenuItem;
