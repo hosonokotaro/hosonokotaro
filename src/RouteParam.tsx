@@ -71,7 +71,7 @@ const Transition = styled.div`
   position: relative;
   letter-spacing: 0;
   opacity: 1;
-  transform-origin: center center;
+  transform-origin: top center;
   transition: all 0.6s ease;
 
   &.route-enter {
