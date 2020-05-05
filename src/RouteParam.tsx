@@ -63,7 +63,7 @@ const Article = styled.article`
   padding-bottom: 40px;
 
   @media (min-width: 768px) {
-    min-height: calc(100vh - 167px - 53px);
+    min-height: calc(100vh - 171px - 53px);
   }
 `;
 
