@@ -8,6 +8,7 @@ import {
   siteTitle,
   siteUrl,
   siteDescription,
+  siteTwitterSite,
 } from './components/SiteSetting';
 import MenuItem from './components/MenuItem';
 import RouteParam from './RouteParam';
@@ -22,15 +23,19 @@ import txtNavContactActive from './images/txt_nav_contact_active.png';
 import ogImage from './images/og.png';
 
 const App: React.FC = () => {
+  const siteUrlRemoveSlash = siteUrl.endsWith('/') ? siteUrl.slice(0, -1) : siteUrl;
+
   return (
     <>
       <Helmet>
         <link rel="canonical" href={siteUrl} />
         <meta name="description" content={siteDescription} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={siteTwitterSite} />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={siteUrlRemoveSlash + ogImage} />
         <meta property="og:description" content={siteDescription} />
         <title>{siteTitle}</title>
       </Helmet>
