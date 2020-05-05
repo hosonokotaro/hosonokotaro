@@ -23,6 +23,8 @@ import txtNavContactActive from './images/txt_nav_contact_active.png';
 import ogImage from './images/og.png';
 
 const App: React.FC = () => {
+  const siteUrlRemoveSlash = siteUrl.endsWith('/') ? siteUrl.slice(0, -1) : siteUrl;
+
   return (
     <>
       <Helmet>
@@ -33,7 +35,7 @@ const App: React.FC = () => {
         <meta property="og:title" content={siteTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={siteUrlRemoveSlash + ogImage} />
         <meta property="og:description" content={siteDescription} />
         <title>{siteTitle}</title>
       </Helmet>
