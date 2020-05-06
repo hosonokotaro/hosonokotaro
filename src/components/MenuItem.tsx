@@ -46,7 +46,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 const Item = styled.li`
   position: relative;
 
-  & + li:before {
+  & + &:before {
     position: absolute;
     top: -9px;
     display: block;
@@ -54,6 +54,7 @@ const Item = styled.li`
     height: 57.5px;
     background: #333;
     transform: rotate(45deg);
+    pointer-events: none;
     content: "";
   }
 `;
