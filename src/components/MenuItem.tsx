@@ -5,12 +5,14 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Picture from './Picture'
+
 type MenuItemProps = {
-  label: string,
-  imagePath: string,
-  currentImagePath: string,
-  to: string,
-  active: boolean,
+  label: string;
+  imagePath: string;
+  currentImagePath: string;
+  to: string;
+  active: boolean;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
@@ -19,25 +21,19 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     exact: props.active,
   });
 
+  const matchSrc = match ? props.currentImagePath : props.imagePath;
+
   return (
     <Item>
       <ItemLink
         to={props.to}
         className={match ? 'link-current' : ''}
       >
-        <picture>
-          <source
-            srcSet={match ? props.currentImagePath : props.imagePath}
-            media="(min-width: 768px)"
-          />
-          <source
-            srcSet={match ? props.currentImagePath + ' 2x' : props.imagePath + ' 2x'}
-          />
-          <img
-            src={match ? props.currentImagePath : props.imagePath}
-            alt={props.label}
-          />
-        </picture>
+        <Picture
+          srcPC={matchSrc}
+          srcSP={matchSrc}
+          alt={props.label}
+        />
       </ItemLink>
     </Item>
   );

@@ -12,6 +12,7 @@ import {
 } from './components/SiteSetting';
 import Menu from './components/Menu';
 import RouteParam from './components/RouteParam';
+import Picture from './components/Picture';
 
 import txtHeadTtl from './images/txt_head_ttl.png';
 import ogImage from './images/og.png';
@@ -36,14 +37,11 @@ const App: React.FC = () => {
       <Router>
         <Header>
           <h1>
-            <picture>
-              <source srcSet={txtHeadTtl} media="(min-width: 768px)" />
-              <source srcSet={txtHeadTtl + ' 2x'} />
-              <img
-                src={txtHeadTtl}
-                alt="WebDeveloper hosonokotaro"
-              />
-            </picture>
+            <Picture
+              srcPC={txtHeadTtl}
+              srcSP={txtHeadTtl}
+              alt={siteTitle}
+            />
           </h1>
         </Header>
         <Menu />
