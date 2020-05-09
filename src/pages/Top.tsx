@@ -3,10 +3,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { siteTitle } from '../SiteSetting';
 import Twitter from '../components/Twitter';
-import {
-  Section,
-  SectionTitle,
-} from '../components/styled/Section';
+import Section from '../components/Section';
 
 import picKitaku from '../images/pic_kitaku.png';
 import txtKitakuTtl from '../images/txt_kitaku_ttl.png';
@@ -31,22 +28,22 @@ const Top: React.FC = () => {
           私は、そんな粗野な印象を残す街で、親子三世代に渡って生活をしている。
         </TxtCaption>
       </FirstView>
-      <Section>
-        <SectionTitle>
-          Speak
-        </SectionTitle>
-        <SectionList>
-          <li>
-            <IconText>GitHub</IconText><a href="https://github.com/hosonokotaro/" target="_blank" rel="noopener noreferrer">https://github.com/hosonokotaro/</a>
-          </li>
-          <li>
-            <IconText>Qiita</IconText><a href="https://qiita.com/hosono" target="_blank" rel="noopener noreferrer">https://qiita.com/hosono</a>
-          </li>
-          <li>
-            <IconText>note</IconText><a href="https://note.mu/hosonokotaro" target="_blank" rel="noopener noreferrer">https://note.mu/hosonokotaro</a>
-          </li>
-        </SectionList>
-      </Section>
+      <Section
+        title={'Speak'}
+        content={
+          <SectionList>
+            <li>
+              <IconText>GitHub</IconText><a href="https://github.com/hosonokotaro/" target="_blank" rel="noopener noreferrer">https://github.com/hosonokotaro/</a>
+            </li>
+            <li>
+              <IconText>Qiita</IconText><a href="https://qiita.com/hosono" target="_blank" rel="noopener noreferrer">https://qiita.com/hosono</a>
+            </li>
+            <li>
+              <IconText>note</IconText><a href="https://note.mu/hosonokotaro" target="_blank" rel="noopener noreferrer">https://note.mu/hosonokotaro</a>
+            </li>
+          </SectionList>
+        }
+        />
       <Twitter />
     </>
   );

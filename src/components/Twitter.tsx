@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import {
-  Section,
-  SectionTitle,
-} from './styled/Section';
+import Section from '../components/Section';
 import { siteTwitterName } from '../SiteSetting';
 
 const Twitter: React.FC = () => {
@@ -20,33 +17,36 @@ const Twitter: React.FC = () => {
   });
 
   return (
-    <Section id="twitter">
-      <SectionTitle>
-        twitter
-      </SectionTitle>
-      <BoxTwitter>
-        <a
-          className="twitter-timeline"
-          data-lang="ja"
-          data-height="667"
-          data-theme="light"
-          data-tweet-limit="5"
-          href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
-        >
-          Tweets by {siteTwitterName}
-        </a>
-      </BoxTwitter>
-      <BoxTwitterButton>
-        <a
-          href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
-          className="twitter-follow-button"
-          data-lang="ja"
-          data-show-count="false"
-        >
-          Follow @{siteTwitterName}
-        </a>
-      </BoxTwitterButton>
-    </Section>
+    <Section
+      id="twitter"
+      title={'twitter'}
+      content={
+        <>
+          <BoxTwitter>
+            <a
+              className="twitter-timeline"
+              data-lang="ja"
+              data-height="667"
+              data-theme="light"
+              data-tweet-limit="5"
+              href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
+            >
+              Tweets by {siteTwitterName}
+            </a>
+          </BoxTwitter>
+          <BoxTwitterButton>
+            <a
+              href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
+              className="twitter-follow-button"
+              data-lang="ja"
+              data-show-count="false"
+            >
+              Follow @{siteTwitterName}
+            </a>
+          </BoxTwitterButton>
+        </>
+      }
+    />
   );
 };
 
