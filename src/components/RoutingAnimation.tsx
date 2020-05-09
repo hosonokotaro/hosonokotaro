@@ -10,11 +10,11 @@ import {
 } from 'react-transition-group';
 import styled from 'styled-components';
 
-import Top from './pages/Top';
-import Work from './pages/Work';
-import Contact from './pages/Contact';
+import Top from '../pages/Top';
+import Work from '../pages/Work';
+import Contact from '../pages/Contact';
 
-const RouteParam = () => {
+const RoutingAnimation = () => {
   const location = useLocation();
 
   useEffect(() => {
@@ -34,19 +34,19 @@ const RouteParam = () => {
         >
           <Switch location={location}>
             <Route exact path="/">
-              <Transition>
+              <AreaTransition>
                 <Top />
-              </Transition>
+              </AreaTransition>
             </Route>
             <Route path="/work">
-              <Transition>
+              <AreaTransition>
                 <Work />
-              </Transition>
+              </AreaTransition>
             </Route>
             <Route path="/contact">
-              <Transition>
+              <AreaTransition>
                 <Contact />
-              </Transition>
+              </AreaTransition>
             </Route>
           </Switch>
         </CSSTransition>
@@ -67,7 +67,7 @@ const Article = styled.article`
   }
 `;
 
-const Transition = styled.div`
+const AreaTransition = styled.div`
   position: relative;
   letter-spacing: 0;
   opacity: 1;
@@ -107,4 +107,4 @@ const Transition = styled.div`
   }
 `;
 
-export default RouteParam;
+export default RoutingAnimation;

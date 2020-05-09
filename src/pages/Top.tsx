@@ -1,12 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { siteTitle } from '../components/SiteSetting';
+import { siteTitle } from '../SiteSetting';
 import Twitter from '../components/Twitter';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from '../components/styled/Section';
 
 import picKitaku from '../images/pic_kitaku.png';
 import txtKitakuTtl from '../images/txt_kitaku_ttl.png';

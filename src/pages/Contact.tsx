@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { siteTitle } from '../components/SiteSetting';
+import { siteTitle } from '../SiteSetting';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from '../components/styled/Section';
 
 import picHosono from '../images/pic_hosono.jpg';
 import picMail from '../images/pic_mail.png';

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from './styled/Section';
+import { siteTwitterName } from '../SiteSetting';
 
 const Twitter: React.FC = () => {
   useEffect(() => {
@@ -30,19 +31,19 @@ const Twitter: React.FC = () => {
           data-height="667"
           data-theme="light"
           data-tweet-limit="5"
-          href="https://twitter.com/hosono_fe?ref_src=twsrc%5Etfw"
+          href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
         >
-          Tweets by hosono_fe
+          Tweets by {siteTwitterName}
         </a>
       </BoxTwitter>
       <BoxTwitterButton>
         <a
-          href="https://twitter.com/hosono_fe?ref_src=twsrc%5Etfw"
+          href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
           className="twitter-follow-button"
           data-lang="ja"
           data-show-count="false"
         >
-          Follow @hosono_fe
+          Follow @{siteTwitterName}
         </a>
       </BoxTwitterButton>
     </Section>

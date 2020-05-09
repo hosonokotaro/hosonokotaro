@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
-import { siteTitle } from '../components/SiteSetting';
+} from '../components/styled/Section';
+import { siteTitle } from '../SiteSetting';
 
 const Work: React.FC = () => {
   return (

@@ -8,18 +8,13 @@ import {
   siteTitle,
   siteUrl,
   siteDescription,
-  siteTwitterSite,
-} from './components/SiteSetting';
-import MenuItem from './components/MenuItem';
-import RouteParam from './RouteParam';
+  siteTwitterName,
+} from './SiteSetting';
+import Menu from './components/Menu';
+import RouteParam from './components/RoutingAnimation';
+import Picture from './components/Picture';
 
 import txtHeadTtl from './images/txt_head_ttl.png';
-import txtNavTop from './images/txt_nav_top.png';
-import txtNavTopActive from './images/txt_nav_top_active.png';
-import txtNavWork from './images/txt_nav_work.png';
-import txtNavWorkActive from './images/txt_nav_work_active.png';
-import txtNavContact from './images/txt_nav_contact.png';
-import txtNavContactActive from './images/txt_nav_contact_active.png';
 import ogImage from './images/og.png';
 
 const App: React.FC = () => {
@@ -31,7 +26,7 @@ const App: React.FC = () => {
         <link rel="canonical" href={siteUrl} />
         <meta name="description" content={siteDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={siteTwitterSite} />
+        <meta name="twitter:site" content={'@' + siteTwitterName} />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
@@ -40,43 +35,16 @@ const App: React.FC = () => {
         <title>{siteTitle}</title>
       </Helmet>
       <Router>
-        <header>
-          <Title>
-            <picture>
-              <source srcSet={txtHeadTtl} media="(min-width: 768px)" />
-              <source srcSet={txtHeadTtl + ' 2x'} />
-              <img
-                src={txtHeadTtl}
-                alt="WebDeveloper hosonokotaro"
-              />
-            </picture>
-          </Title>
-        </header>
-        <Menu>
-          <MenuList>
-            <MenuItem
-              active={true}
-              to="/"
-              imagePath={txtNavTop}
-              currentImagePath={txtNavTopActive}
-              label="Top"
+        <Header>
+          <h1>
+            <Picture
+              srcPC={txtHeadTtl}
+              srcSP={txtHeadTtl}
+              alt={siteTitle}
             />
-            <MenuItem
-              active={false}
-              to="/work/"
-              imagePath={txtNavWork}
-              currentImagePath={txtNavWorkActive}
-              label="Work"
-            />
-            <MenuItem
-              active={false}
-              to="/contact/"
-              imagePath={txtNavContact}
-              currentImagePath={txtNavContactActive}
-              label="Contact"
-            />
-          </MenuList>
-        </Menu>
+          </h1>
+        </Header>
+        <Menu />
         <RouteParam />
         <Footer>
           © { new Date().getFullYear() } HOSONO KOTARO
@@ -86,22 +54,8 @@ const App: React.FC = () => {
   );
 };
 
-const Title = styled.h1`
+const Header = styled.header`
   text-align: center;
-`;
-
-const Menu = styled.nav`
-  position: sticky;
-  top: 0;
-  z-index: 1;
-`;
-
-const MenuList = styled.ul`
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  margin-top: -5px;
-  border-bottom: 1px solid #333;
 `;
 
 const Footer = styled.footer`
