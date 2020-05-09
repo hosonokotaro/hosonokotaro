@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from '../components/styled/Section';
 import { siteTitle } from '../components/SiteSetting';
 
 const Work: React.FC = () => {

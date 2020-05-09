@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from './styled/Section';
 
 const Twitter: React.FC = () => {
   useEffect(() => {

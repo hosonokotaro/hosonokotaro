@@ -6,7 +6,7 @@ import Twitter from '../components/Twitter';
 import {
   Section,
   SectionTitle,
-} from '../components/Section';
+} from '../components/styled/Section';
 
 import picKitaku from '../images/pic_kitaku.png';
 import txtKitakuTtl from '../images/txt_kitaku_ttl.png';
