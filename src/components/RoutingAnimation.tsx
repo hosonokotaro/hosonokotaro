@@ -14,7 +14,7 @@ import Top from '../pages/Top';
 import Work from '../pages/Work';
 import Contact from '../pages/Contact';
 
-const RouteParam = () => {
+const RoutingAnimation = () => {
   const location = useLocation();
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const AreaTransition = styled.div`
   }
 `;
 
-export default RouteParam;
+export default RoutingAnimation;

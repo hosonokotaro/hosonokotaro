@@ -8,10 +8,10 @@ import {
   siteTitle,
   siteUrl,
   siteDescription,
-  siteTwitterSite,
-} from './components/SiteSetting';
+  siteTwitterName,
+} from './SiteSetting';
 import Menu from './components/Menu';
-import RouteParam from './components/RouteParam';
+import RouteParam from './components/RoutingAnimation';
 import Picture from './components/Picture';
 
 import txtHeadTtl from './images/txt_head_ttl.png';
@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <link rel="canonical" href={siteUrl} />
         <meta name="description" content={siteDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={siteTwitterSite} />
+        <meta name="twitter:site" content={'@' + siteTwitterName} />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />

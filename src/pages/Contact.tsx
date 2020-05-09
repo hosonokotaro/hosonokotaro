@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { siteTitle } from '../components/SiteSetting';
+import { siteTitle } from '../SiteSetting';
 import {
   Section,
   SectionTitle,

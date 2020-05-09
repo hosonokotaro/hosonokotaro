@@ -5,7 +5,7 @@ import {
   Section,
   SectionTitle,
 } from '../components/styled/Section';
-import { siteTitle } from '../components/SiteSetting';
+import { siteTitle } from '../SiteSetting';
 
 const Work: React.FC = () => {
   return (
