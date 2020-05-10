@@ -12,7 +12,7 @@ const Work: React.FC = () => {
         <title>WORK | {siteTitle}</title>
       </Helmet>
       <Section
-        title={'Work'}
+        title="Work"
         content={
           <DescList>
             <dt>

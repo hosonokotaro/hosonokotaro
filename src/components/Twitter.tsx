@@ -19,7 +19,7 @@ const Twitter: React.FC = () => {
   return (
     <Section
       id="twitter"
-      title={'twitter'}
+      title="twitter"
       content={
         <>
           <BoxTwitter>
