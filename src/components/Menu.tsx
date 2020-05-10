@@ -10,11 +10,7 @@ import txtNavWorkActive from '../images/txt_nav_work_active.png';
 import txtNavContact from '../images/txt_nav_contact.png';
 import txtNavContactActive from '../images/txt_nav_contact_active.png';
 
-type MenuProps = {
-  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-}
-
-const Menu: React.FC<MenuProps> = (props) => {
+const Menu: React.FC = () => {
   return (
     <AreaMenu>
       <MenuList>
@@ -24,7 +20,6 @@ const Menu: React.FC<MenuProps> = (props) => {
           imagePath={txtNavTop}
           currentImagePath={txtNavTopActive}
           label="TOP"
-          onClick={props.onClick}
         />
         <MenuItem
           active={false}
@@ -32,7 +27,6 @@ const Menu: React.FC<MenuProps> = (props) => {
           imagePath={txtNavWork}
           currentImagePath={txtNavWorkActive}
           label="WORK"
-          onClick={props.onClick}
         />
         <MenuItem
           active={false}
@@ -40,7 +34,6 @@ const Menu: React.FC<MenuProps> = (props) => {
           imagePath={txtNavContact}
           currentImagePath={txtNavContactActive}
           label="CONTACT"
-          onClick={props.onClick}
         />
       </MenuList>
     </AreaMenu>

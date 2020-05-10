@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+} from 'react';
 import {
   Switch,
   Route,
@@ -14,26 +17,35 @@ import Top from '../pages/Top';
 import Work from '../pages/Work';
 import Contact from '../pages/Contact';
 
-type RoutingAnimationProps = {
-  isAnimation: boolean;
-}
-
-const RoutingAnimation: React.FC<RoutingAnimationProps> = (props) => {
+const RoutingAnimation: React.FC = () => {
   const location = useLocation();
+  const [isAnimation, setIsAnimation] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('popstate', () => {
+      setIsAnimation(false);
+    }, false);
+  }, []);
 
   useEffect(() => {
     window.scroll({
       top: 0,
       behavior: 'smooth',
     });
+
+    const timer = setTimeout(() => {
+      setIsAnimation(true);
+    }, 600);
+
+    return () => clearTimeout(timer);
   });
 
   return (
     <Article>
       <TransitionGroup
         component={null}
-        enter={props.isAnimation}
-        exit={props.isAnimation}
+        enter={isAnimation}
+        exit={isAnimation}
       >
         <CSSTransition
           key={location.key}
