@@ -13,7 +13,6 @@ type MenuItemProps = {
   currentImagePath: string;
   to: string;
   active: boolean;
-  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
@@ -29,7 +28,6 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
       <ItemLink
         to={props.to}
         className={match ? 'link-current' : ''}
-        onClick={props.onClick}
       >
         <Picture
           srcPC={matchSrc}
