@@ -14,7 +14,11 @@ import Top from '../pages/Top';
 import Work from '../pages/Work';
 import Contact from '../pages/Contact';
 
-const RoutingAnimation = () => {
+type RoutingAnimationProps = {
+  isAnimation: boolean;
+}
+
+const RoutingAnimation: React.FC<RoutingAnimationProps> = (props) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -26,7 +30,11 @@ const RoutingAnimation = () => {
 
   return (
     <Article>
-      <TransitionGroup component={null}>
+      <TransitionGroup
+        component={null}
+        enter={props.isAnimation}
+        exit={props.isAnimation}
+      >
         <CSSTransition
           key={location.key}
           classNames="route"

@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import {
@@ -10,8 +7,8 @@ import {
   siteDescription,
   siteTwitterName,
 } from './SiteSetting';
-import Menu from './components/Menu';
-import RouteParam from './components/RoutingAnimation';
+
+import AppRouter from './AppRouter'
 import Picture from './components/Picture';
 
 import txtHeadTtl from './images/txt_head_ttl.png';
@@ -34,22 +31,19 @@ const App: React.FC = () => {
         <meta property="og:description" content={siteDescription} />
         <title>{siteTitle}</title>
       </Helmet>
-      <Router>
-        <Header>
-          <h1>
-            <Picture
-              srcPC={txtHeadTtl}
-              srcSP={txtHeadTtl}
-              alt={siteTitle}
-            />
-          </h1>
-        </Header>
-        <Menu />
-        <RouteParam />
-        <Footer>
-          © { new Date().getFullYear() } HOSONO KOTARO
-        </Footer>
-      </Router>
+      <Header>
+        <h1>
+          <Picture
+            srcPC={txtHeadTtl}
+            srcSP={txtHeadTtl}
+            alt={siteTitle}
+          />
+        </h1>
+      </Header>
+      <AppRouter />
+      <Footer>
+        © { new Date().getFullYear() } HOSONO KOTARO
+      </Footer>
     </>
   );
 };
