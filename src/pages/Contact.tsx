@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
         <title>CONTACT | {siteTitle}</title>
       </Helmet>
       <Section
-        title={'Contact'}
+        title="Contact"
         content={
           <>
             <Figure>

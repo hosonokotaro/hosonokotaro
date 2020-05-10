@@ -29,7 +29,7 @@ const Top: React.FC = () => {
         </TxtCaption>
       </FirstView>
       <Section
-        title={'Speak'}
+        title="Speak"
         content={
           <SectionList>
             <li>
