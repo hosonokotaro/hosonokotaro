@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import {} from 'styled-components/macro';
 
 import MenuItem from './MenuItem';
 
@@ -12,46 +12,52 @@ import txtNavContactActive from '../images/txt_nav_contact_active.png';
 
 const Menu: React.FC = () => {
   return (
-    <AreaMenu>
-      <MenuList>
+    <nav
+      css={`
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      `}
+    >
+      <ul
+        css={`
+          display: flex;
+          justify-content: center;
+          height: 100%;
+          margin-top: -5px;
+          border-bottom: 1px solid #333;
+        `}
+      >
         <MenuItem
           active={true}
           to="/"
           imagePath={txtNavTop}
-          currentImagePath={txtNavTopActive}
+          currentImagePath={
+            txtNavTopActive
+          }
           label="TOP"
         />
         <MenuItem
           active={false}
           to="/work/"
           imagePath={txtNavWork}
-          currentImagePath={txtNavWorkActive}
+          currentImagePath={
+            txtNavWorkActive
+          }
           label="WORK"
         />
         <MenuItem
           active={false}
           to="/contact/"
           imagePath={txtNavContact}
-          currentImagePath={txtNavContactActive}
+          currentImagePath={
+            txtNavContactActive
+          }
           label="CONTACT"
         />
-      </MenuList>
-    </AreaMenu>
+      </ul>
+    </nav>
   );
 };
-
-const AreaMenu = styled.nav`
-  position: sticky;
-  top: 0;
-  z-index: 1;
-`;
-
-const MenuList = styled.ul`
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  margin-top: -5px;
-  border-bottom: 1px solid #333;
-`;
 
 export default Menu;

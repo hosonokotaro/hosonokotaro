@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import {} from 'styled-components/macro';
 
 import Section from '../components/Section';
 import { siteTitle } from '../SiteSetting';
@@ -9,21 +9,47 @@ const Work: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>WORK | {siteTitle}</title>
+        <title>
+          WORK | {siteTitle}
+        </title>
       </Helmet>
       <Section
         title="Work"
         content={
-          <DescList>
-            <dt>
-              2019
-            </dt>
+          <dl
+            css={`
+              padding-top: 2em;
+              line-height: 1;
+              font-size: 1.4rem;
+
+              @media (min-width: 768px) {
+                font-size: 1.8rem;
+              }
+
+              dt {
+                line-height: 1;
+                font-size: 2.4rem;
+
+                @media (min-width: 768px) {
+                  font-size: 3.2rem;
+                }
+              }
+              dd {
+                padding-top: 1em;
+              }
+              dd + dd {
+                padding-top: 1em;
+              }
+              dd + dt {
+                padding-top: 1em;
+              }
+            `}
+          >
+            <dt>2019</dt>
             <dd>
               大手金融会社にてサイト改修
             </dd>
-            <dt>
-              2018
-            </dt>
+            <dt>2018</dt>
             <dd>
               大手ラジオ局企画のwebサイト
             </dd>
@@ -36,48 +62,26 @@ const Work: React.FC = () => {
             <dd>
               フリーランスとして独立
             </dd>
-            <dt>
-              2017
-            </dt>
+            <dt>2017</dt>
             <dd>
-              地元、赤羽の絵本屋さんの<a href="http://aoneko-shobou.jp/" target="_blank" rel="noopener noreferrer">webサイト</a>制作
+              地元、赤羽の絵本屋さんの
+              <a
+                href="http://aoneko-shobou.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                webサイト
+              </a>
+              制作
             </dd>
             <dd>
               大手ゲームプラットフォーム運営会社勤務
             </dd>
-          </DescList>
+          </dl>
         }
       />
     </>
   );
 };
-
-const DescList = styled.dl`
-  padding-top: 2em;
-  line-height: 1;
-  font-size: 1.4rem;
-
-  @media (min-width: 768px) {
-    font-size: 1.8rem;
-  }
-
-  dt {
-    line-height: 1;
-    font-size: 2.4rem;
-
-    @media (min-width: 768px) {
-      font-size: 3.2rem;
-    }
-  }
-  dd {
-    padding-top: 1em;
-  }
-  dd + dd {
-    padding-top: 1em;
-  }
-  dd + dt {
-    padding-top: 1em;
-  }
-`;
 
 export default Work;
