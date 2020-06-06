@@ -14,7 +14,10 @@
     "@types/react-router-dom": "^5.1.4",
     "@types/react-transition-group": "^4.2.4",
     "@types/styled-components": "^5.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
     "normalize.css": "^8.0.1",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
@@ -24,6 +27,11 @@
     "react-transition-group": "^4.3.0",
     "styled-components": "^5.1.0",
     "typescript": "~3.7.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +52,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 40,
+    "trailingComma": "all"
   }
 }

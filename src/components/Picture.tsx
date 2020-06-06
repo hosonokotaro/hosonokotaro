@@ -4,9 +4,11 @@ type PictureProps = {
   srcPC: string;
   srcSP: string;
   alt: string;
-}
+};
 
-const Picture: React.FC<PictureProps> = (props) => {
+const Picture: React.FC<PictureProps> = (
+  props,
+) => {
   return (
     <picture>
       <source

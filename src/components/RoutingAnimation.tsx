@@ -11,7 +11,7 @@ import {
   TransitionGroup,
   CSSTransition,
 } from 'react-transition-group';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Top from '../pages/Top';
 import Work from '../pages/Work';
@@ -19,12 +19,19 @@ import Contact from '../pages/Contact';
 
 const RoutingAnimation: React.FC = () => {
   const location = useLocation();
-  const [isAnimation, setIsAnimation] = useState(true);
+  const [
+    isAnimation,
+    setIsAnimation,
+  ] = useState(true);
 
   useEffect(() => {
-    window.addEventListener('popstate', () => {
-      setIsAnimation(false);
-    }, false);
+    window.addEventListener(
+      'popstate',
+      () => {
+        setIsAnimation(false);
+      },
+      false,
+    );
   }, []);
 
   useEffect(() => {
@@ -41,7 +48,23 @@ const RoutingAnimation: React.FC = () => {
   });
 
   return (
-    <Article>
+    <article
+      css={`
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        min-height: calc(
+          100vh - 102px - 53px
+        );
+        padding-bottom: 40px;
+
+        @media (min-width: 768px) {
+          min-height: calc(
+            100vh - 171px - 53px
+          );
+        }
+      `}
+    >
       <TransitionGroup
         component={null}
         enter={isAnimation}
@@ -71,21 +94,9 @@ const RoutingAnimation: React.FC = () => {
           </Switch>
         </CSSTransition>
       </TransitionGroup>
-    </Article>
+    </article>
   );
 };
-
-const Article = styled.article`
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  min-height: calc(100vh - 102px - 53px);
-  padding-bottom: 40px;
-
-  @media (min-width: 768px) {
-    min-height: calc(100vh - 171px - 53px);
-  }
-`;
 
 const AreaTransition = styled.div`
   position: relative;
