@@ -21,6 +21,9 @@ const App: React.FC = () => {
     ? siteUrl.slice(0, -1)
     : siteUrl;
 
+  const fullYear = () =>
+    new Date().getFullYear();
+
   return (
     <>
       <Helmet>
@@ -81,8 +84,7 @@ const App: React.FC = () => {
       </header>
       <AppRouter />
       <Footer>
-        © {new Date().getFullYear()}{' '}
-        HOSONO KOTARO
+        © {fullYear()} HOSONO KOTARO
       </Footer>
     </>
   );
