@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import {
   siteTitle,
   siteUrl,
@@ -80,25 +80,25 @@ const App: React.FC = () => {
         </h1>
       </header>
       <AppRouter />
-      <footer
-        css={`
-          padding: 20px 0;
-          line-height: 1;
-          text-align: center;
-          border-top: 1px solid #333;
-          font-size: 1.2rem;
-          color: #000;
-
-          @media (min-width: 768px) {
-            font-size: 1.6rem;
-          }
-        `}
-      >
+      <Footer>
         © {new Date().getFullYear()}{' '}
         HOSONO KOTARO
-      </footer>
+      </Footer>
     </>
   );
 };
+
+const Footer = styled.footer`
+  padding: 20px 0;
+  line-height: 1;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 1.2rem;
+  color: #000;
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+`;
 
 export default App;

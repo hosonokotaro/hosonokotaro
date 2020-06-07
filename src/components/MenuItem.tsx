@@ -3,7 +3,7 @@ import {
   Link,
   useRouteMatch,
 } from 'react-router-dom';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
 import Picture from './Picture';
 
@@ -28,23 +28,7 @@ const MenuItem: React.FC<MenuItemProps> = (
     : props.imagePath;
 
   return (
-    <li
-      css={`
-        position: relative;
-
-        & + &:before {
-          position: absolute;
-          top: -9px;
-          display: block;
-          width: 1px;
-          height: 57.5px;
-          background: #333;
-          transform: rotate(45deg);
-          pointer-events: none;
-          content: '';
-        }
-      `}
-    >
+    <Item>
       <Link
         to={props.to}
         className={
@@ -65,8 +49,24 @@ const MenuItem: React.FC<MenuItemProps> = (
           alt={props.label}
         />
       </Link>
-    </li>
+    </Item>
   );
 };
+
+const Item = styled.li`
+  position: relative;
+
+  & + &:before {
+    position: absolute;
+    top: -9px;
+    display: block;
+    width: 1px;
+    height: 57.5px;
+    background: #333;
+    transform: rotate(45deg);
+    pointer-events: none;
+    content: '';
+  }
+`;
 
 export default MenuItem;

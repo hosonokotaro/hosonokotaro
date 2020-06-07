@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { siteTitle } from '../SiteSetting';
 import Section from '../components/Section';
 import picHosono from '../images/pic_hosono.jpg';
@@ -18,58 +18,16 @@ const Contact: React.FC = () => {
         title="Contact"
         content={
           <>
-            <figure
-              css={`
-                position: relative;
-                width: 180px;
-                margin: 0 auto;
-                padding-top: 2em;
-
-                @media (min-width: 768px) {
-                  width: 360px;
-                }
-              `}
-            >
+            <ContactImage>
               <img
                 src={picHosono}
                 alt="細野"
-                css={`
-                  width: 100%;
-                  height: 180px;
-                  border-radius: 50%;
-                  overflow: hidden;
-                  object-fit: cover;
-
-                  @media (min-width: 768px) {
-                    height: 360px;
-                  }
-                `}
               />
-            </figure>
-            <h3
-              css={`
-                padding-top: 0.8em;
-                line-height: 1;
-                font-size: 1.8rem;
-                text-align: center;
-
-                @media (min-width: 768px) {
-                  font-size: 2.4rem;
-                }
-              `}
-            >
+            </ContactImage>
+            <ContactSubTitle>
               HOSONO KOTARO
-            </h3>
-            <p
-              css={`
-                padding-top: 2em;
-                font-size: 1.4rem;
-
-                @media (min-width: 768px) {
-                  font-size: 1.8rem;
-                }
-              `}
-            >
+            </ContactSubTitle>
+            <ContactText>
               <ruby>
                 細野 広太郎
                 <rt>
@@ -107,12 +65,55 @@ const Contact: React.FC = () => {
                   `}
                 />
               </a>
-            </p>
+            </ContactText>
           </>
         }
       />
     </>
   );
 };
+
+const ContactImage = styled.figure`
+  position: relative;
+  width: 180px;
+  margin: 0 auto;
+  padding-top: 2em;
+
+  @media (min-width: 768px) {
+    width: 360px;
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      height: 360px;
+    }
+  }
+`;
+
+const ContactSubTitle = styled.h3`
+  padding-top: 0.8em;
+  line-height: 1;
+  font-size: 1.8rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+  }
+`;
+
+const ContactText = styled.p`
+  padding-top: 2em;
+  font-size: 1.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
 
 export default Contact;

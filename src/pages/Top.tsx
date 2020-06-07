@@ -15,16 +15,7 @@ const Top: React.FC = () => {
       <Helmet>
         <title>TOP | {siteTitle}</title>
       </Helmet>
-      <section
-        css={`
-          margin: 0 auto;
-          padding: 4em;
-          text-align: center;
-          background: url(${picKitakuBg})
-            top 30% center no-repeat;
-          background-size: cover;
-        `}
-      >
+      <FirstView>
         <figure>
           <img
             src={picKitaku}
@@ -41,39 +32,18 @@ const Top: React.FC = () => {
             alt="東京都北区赤羽"
           />
         </h2>
-        <p
-          css={`
-            padding-top: 2em;
-            line-height: 1.8;
-            font-size: 1.4rem;
-            color: #ddd;
-
-            @media (min-width: 768px) {
-              font-size: 1.8rem;
-            }
-          `}
-        >
+        <p>
           東京都北区赤羽、北の玄関口。
           <br />
           戦後の労働者たちは夜勤明けに、赤羽の飲み屋街に集まり酒を飲んだという。
           <br />
           私は、そんな粗野な印象を残す街で、親子三世代に渡って生活をしている。
         </p>
-      </section>
+      </FirstView>
       <Section
         title="Speak"
         content={
-          <ul
-            css={`
-              padding-top: 2em;
-              line-height: 1.8;
-              font-size: 1.4rem;
-
-              @media (min-width: 768px) {
-                font-size: 1.8rem;
-              }
-            `}
-          >
+          <ExternalLinkList>
             <li>
               <IconText>
                 GitHub
@@ -106,13 +76,43 @@ const Top: React.FC = () => {
                 https://note.mu/hosonokotaro
               </a>
             </li>
-          </ul>
+          </ExternalLinkList>
         }
       />
       <Twitter />
     </>
   );
 };
+
+const FirstView = styled.section`
+  margin: 0 auto;
+  padding: 4em;
+  text-align: center;
+  background: url(${picKitakuBg}) top
+    30% center no-repeat;
+  background-size: cover;
+
+  p {
+    padding-top: 2em;
+    line-height: 1.8;
+    font-size: 1.4rem;
+    color: #ddd;
+
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+`;
+
+const ExternalLinkList = styled.ul`
+  padding-top: 2em;
+  line-height: 1.8;
+  font-size: 1.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
 
 const IconText = styled.span`
   margin-right: 5px;

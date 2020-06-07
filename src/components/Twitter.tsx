@@ -1,7 +1,7 @@
 import React, {
   useEffect,
 } from 'react';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import Section from '../components/Section';
 import { siteTwitterName } from '../SiteSetting';
 
@@ -33,18 +33,7 @@ const Twitter: React.FC = () => {
       title="twitter"
       content={
         <>
-          <div
-            css={`
-              margin-top: 2em;
-              padding: 5px;
-              background: #f1f1f1;
-              font-size: 1.4rem;
-
-              @media (min-width: 768px) {
-                font-size: 1.8rem;
-              }
-            `}
-          >
+          <TimeLine>
             <a
               className="twitter-timeline"
               data-lang="ja"
@@ -56,7 +45,7 @@ const Twitter: React.FC = () => {
               Tweets by{' '}
               {siteTwitterName}
             </a>
-          </div>
+          </TimeLine>
           <div
             css={`
               padding-top: 2em;
@@ -77,5 +66,16 @@ const Twitter: React.FC = () => {
     />
   );
 };
+
+const TimeLine = styled.div`
+  margin-top: 2em;
+  padding: 5px;
+  background: #f1f1f1;
+  font-size: 1.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
 
 export default Twitter;
