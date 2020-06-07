@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
 import MenuItem from './MenuItem';
 
@@ -19,15 +19,7 @@ const Menu: React.FC = () => {
         z-index: 1;
       `}
     >
-      <ul
-        css={`
-          display: flex;
-          justify-content: center;
-          height: 100%;
-          margin-top: -5px;
-          border-bottom: 1px solid #333;
-        `}
-      >
+      <MenuList>
         <MenuItem
           active={true}
           to="/"
@@ -55,9 +47,17 @@ const Menu: React.FC = () => {
           }
           label="CONTACT"
         />
-      </ul>
+      </MenuList>
     </nav>
   );
 };
+
+const MenuList = styled.ul`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: -5px;
+  border-bottom: 1px solid #333;
+`;
 
 export default Menu;

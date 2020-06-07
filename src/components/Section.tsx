@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
 type SectionProps = {
   id?: string;
@@ -19,22 +19,20 @@ const Section: React.FC<SectionProps> = (
         padding: 40px 40px 0 40px;
       `}
     >
-      <h2
-        css={`
-          line-height: 1;
-          font-size: 3.2rem;
-          font-style: italic;
-
-          @media (min-width: 768px) {
-            font-size: 4.8rem;
-          }
-        `}
-      >
-        {props.title}
-      </h2>
+      <Title>{props.title}</Title>
       {props.content}
     </section>
   );
 };
+
+const Title = styled.h2`
+  line-height: 1;
+  font-size: 3.2rem;
+  font-style: italic;
+
+  @media (min-width: 768px) {
+    font-size: 4.8rem;
+  }
+`;
 
 export default Section;

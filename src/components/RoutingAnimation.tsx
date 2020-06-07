@@ -48,23 +48,7 @@ const RoutingAnimation: React.FC = () => {
   });
 
   return (
-    <article
-      css={`
-        position: relative;
-        overflow: hidden;
-        max-width: 100%;
-        min-height: calc(
-          100vh - 102px - 53px
-        );
-        padding-bottom: 40px;
-
-        @media (min-width: 768px) {
-          min-height: calc(
-            100vh - 171px - 53px
-          );
-        }
-      `}
-    >
+    <Article>
       <TransitionGroup
         component={null}
         enter={isAnimation}
@@ -94,9 +78,25 @@ const RoutingAnimation: React.FC = () => {
           </Switch>
         </CSSTransition>
       </TransitionGroup>
-    </article>
+    </Article>
   );
 };
+
+const Article = styled.article`
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  min-height: calc(
+    100vh - 102px - 53px
+  );
+  padding-bottom: 40px;
+
+  @media (min-width: 768px) {
+    min-height: calc(
+      100vh - 171px - 53px
+    );
+  }
+`;
 
 const AreaTransition = styled.div`
   position: relative;
