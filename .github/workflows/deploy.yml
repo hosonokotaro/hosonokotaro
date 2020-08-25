@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,8 +40,35 @@ jobs:
           ${{ runner.os }}-
 
     - name: Build
-      run: npm ci && npm run build
+      run: |
+        npm ci
+        npm run build
 
-    - name: Pull request merged
-      if: github.event.pull_request.merged == true
-      run: npm run deploy --token=${{ secrets.FIREBASE_TOKEN }}
+  release:
+    needs: [build]
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with: 
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm ci
+        REACT_APP_GTAG_ID=${{ secrets.GTAG_ID }} npm run build
+
+    - name: Deploy
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
