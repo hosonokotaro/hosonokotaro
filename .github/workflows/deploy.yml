@@ -72,4 +72,4 @@ jobs:
           ${{ runner.os }}-
 
     - name: Deploy
-      run: npm ci && npm run build && npm run deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
+      run: npm ci && REACT_APP_GTAG_ID=${{ secrets.GTAG_ID }} npm run build && npm run deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
