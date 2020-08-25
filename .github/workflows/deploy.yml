@@ -43,6 +43,8 @@ jobs:
       run: npm ci && npm run build
 
   release:
-    needs:[build]
+    needs: [build]
+
+    steps:
     - name: Deploy
       run: npm run deploy --token=${{ secrets.FIREBASE_TOKEN }}
