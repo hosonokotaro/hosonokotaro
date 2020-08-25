@@ -36,7 +36,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap",
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,5 +64,8 @@
     "singleQuote": true,
     "printWidth": 40,
     "trailingComma": "all"
+  },
+  "devDependencies": {
+    "firebase-tools": "^8.9.0"
   }
 }

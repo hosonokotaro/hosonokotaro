@@ -39,5 +39,10 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
 
-    - run: npm ci
-    - run: npm run build
+    - name: Build
+      run: npm ci
+      run: npm run build
+
+    - name: Pull request merged
+      if: github.event.pull_request.merged == true
+      run: npm run deploy --token=${{ secrets.FIREBASE_TOKEN }}
