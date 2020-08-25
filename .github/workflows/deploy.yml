@@ -40,7 +40,9 @@ jobs:
           ${{ runner.os }}-
 
     - name: Build
-      run: npm ci && npm run build
+      run: |
+        npm ci
+        npm run build
 
   release:
     needs: [build]
@@ -59,20 +61,14 @@ jobs:
       with: 
         node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
     - name: Build
-      run: npm ci && REACT_APP_GTAG_ID=${{ secrets.GTAG_ID }} npm run build
+      run: |
+        npm ci
+        REACT_APP_GTAG_ID=${{ secrets.GTAG_ID }} npm run build
 
     - name: Deploy
-      run: npm run deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
