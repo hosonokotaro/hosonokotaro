@@ -40,8 +40,7 @@ jobs:
           ${{ runner.os }}-
 
     - name: Build
-      run: npm ci
-      run: npm run build
+      run: npm ci && npm run build
 
     - name: Pull request merged
       if: github.event.pull_request.merged == true
