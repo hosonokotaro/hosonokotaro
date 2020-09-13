@@ -46,6 +46,18 @@ const Top: React.FC = () => {
           <ExternalLinkList>
             <li>
               <IconText>
+                個人ブログ
+              </IconText>
+              <a
+                href="https://techblog.hosonokotaro.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://techblog.hosonokotaro.jp/
+              </a>
+            </li>
+            <li>
+              <IconText>
                 GitHub
               </IconText>
               <a
@@ -54,16 +66,6 @@ const Top: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 https://github.com/hosonokotaro/
-              </a>
-            </li>
-            <li>
-              <IconText>Qiita</IconText>
-              <a
-                href="https://qiita.com/hosono"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://qiita.com/hosono
               </a>
             </li>
             <li>
