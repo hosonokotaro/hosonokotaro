@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import {
   siteTitle,
   siteUrl,
@@ -35,20 +35,20 @@ const App: React.FC = () => {
         <meta property="og:description" content={siteDescription} />
         <title>{siteTitle}</title>
       </Helmet>
-      <header
-        css={`
-          text-align: center;
-        `}
-      >
+      <StyledHeader>
         <h1>
           <Picture srcPC={txtHeadTtl} srcSP={txtHeadTtl} alt={siteTitle} />
         </h1>
-      </header>
+      </StyledHeader>
       <AppRouter />
       <Footer>© {fullYear()} HOSONO KOTARO</Footer>
     </>
   );
 };
+
+const StyledHeader = styled.header`
+  text-align: center;
+`;
 
 const Footer = styled.footer`
   padding: 20px 0;

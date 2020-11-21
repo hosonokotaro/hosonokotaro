@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 type TwitterTimelineProps = {
   siteTwitterName: string;
@@ -20,12 +20,7 @@ const TwitterTimeline: React.FC<TwitterTimelineProps> = (props) => {
           Tweets by {props.siteTwitterName}
         </a>
       </TimeLine>
-      <div
-        css={`
-          padding-top: 2em;
-          line-height: 1;
-        `}
-      >
+      <FollowLinkWrapper>
         <a
           href={`https://twitter.com/${props.siteTwitterName}?ref_src=twsrc%5Etfw`}
           className="twitter-follow-button"
@@ -34,7 +29,7 @@ const TwitterTimeline: React.FC<TwitterTimelineProps> = (props) => {
         >
           Follow @{props.siteTwitterName}
         </a>
-      </div>
+      </FollowLinkWrapper>
     </>
   );
 };
@@ -48,6 +43,11 @@ const TimeLine = styled.div`
   @media (min-width: 768px) {
     font-size: 1.8rem;
   }
+`;
+
+const FollowLinkWrapper = styled.div`
+  padding-top: 2em;
+  line-height: 1;
 `;
 
 export default TwitterTimeline;

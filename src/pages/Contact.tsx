@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { siteTitle } from '../siteSetting';
 import Section from '../components/Section';
 import picHosono from '../images/pic_hosono.jpg';
@@ -44,17 +44,7 @@ const Contact: React.FC = () => {
               <br />
               <br />
               <a href="mailto:hosono1985@gmail.com">
-                <img
-                  src={picMail}
-                  alt="Mail"
-                  css={`
-                    width: 25px;
-
-                    @media (min-width: 768px) {
-                      width: auto;
-                    }
-                  `}
-                />
+                <MailIcon src={picMail} alt="Mail" />
               </a>
             </ContactText>
           </>
@@ -104,6 +94,14 @@ const ContactText = styled.p`
 
   @media (min-width: 768px) {
     font-size: 1.8rem;
+  }
+`;
+
+const MailIcon = styled.img`
+  width: 25px;
+
+  @media (min-width: 768px) {
+    width: auto;
   }
 `;
 

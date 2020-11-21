@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import Top from '../pages/Top';
 import Work from '../pages/Work';

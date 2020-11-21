@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { siteTitle } from '../siteSetting';
 import Twitter from '../container/Twitter';
 import Section from '../components/Section';
@@ -19,13 +19,9 @@ const Top: React.FC = () => {
         <figure>
           <img src={picKitaku} alt="北区" />
         </figure>
-        <h2
-          css={`
-            padding-top: 2em;
-          `}
-        >
+        <StyledH2>
           <img src={txtKitakuTtl} alt="東京都北区赤羽" />
-        </h2>
+        </StyledH2>
         <p>
           東京都北区赤羽、北の玄関口。
           <br />
@@ -93,6 +89,10 @@ const FirstView = styled.section`
       font-size: 1.8rem;
     }
   }
+`;
+
+const StyledH2 = styled.h2`
+  padding-top: 2em;
 `;
 
 const ExternalLinkList = styled.ul`
