@@ -1,16 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
-import {
-  Switch,
-  Route,
-  useLocation,
-} from 'react-router-dom';
-import {
-  TransitionGroup,
-  CSSTransition,
-} from 'react-transition-group';
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components/macro';
 
 import Top from '../pages/Top';
@@ -19,10 +9,7 @@ import Contact from '../pages/Contact';
 
 const RoutingAnimation: React.FC = () => {
   const location = useLocation();
-  const [
-    isAnimation,
-    setIsAnimation,
-  ] = useState(true);
+  const [isAnimation, setIsAnimation] = useState(true);
 
   useEffect(() => {
     window.addEventListener(
@@ -49,16 +36,8 @@ const RoutingAnimation: React.FC = () => {
 
   return (
     <Article>
-      <TransitionGroup
-        component={null}
-        enter={isAnimation}
-        exit={isAnimation}
-      >
-        <CSSTransition
-          key={location.key}
-          classNames="route"
-          timeout={600}
-        >
+      <TransitionGroup component={null} enter={isAnimation} exit={isAnimation}>
+        <CSSTransition key={location.key} classNames="route" timeout={600}>
           <Switch location={location}>
             <Route exact path="/">
               <AreaTransition>
@@ -86,15 +65,11 @@ const Article = styled.article`
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  min-height: calc(
-    100vh - 102px - 53px
-  );
+  min-height: calc(100vh - 102px - 53px);
   padding-bottom: 40px;
 
   @media (min-width: 768px) {
-    min-height: calc(
-      100vh - 171px - 53px
-    );
+    min-height: calc(100vh - 171px - 53px);
   }
 `;
 

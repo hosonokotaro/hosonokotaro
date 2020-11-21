@@ -17,20 +17,14 @@ const Top: React.FC = () => {
       </Helmet>
       <FirstView>
         <figure>
-          <img
-            src={picKitaku}
-            alt="北区"
-          />
+          <img src={picKitaku} alt="北区" />
         </figure>
         <h2
           css={`
             padding-top: 2em;
           `}
         >
-          <img
-            src={txtKitakuTtl}
-            alt="東京都北区赤羽"
-          />
+          <img src={txtKitakuTtl} alt="東京都北区赤羽" />
         </h2>
         <p>
           東京都北区赤羽、北の玄関口。
@@ -45,9 +39,7 @@ const Top: React.FC = () => {
         content={
           <ExternalLinkList>
             <li>
-              <IconText>
-                個人ブログ
-              </IconText>
+              <IconText>個人ブログ</IconText>
               <a
                 href="https://techblog.hosonokotaro.jp/"
                 target="_blank"
@@ -57,9 +49,7 @@ const Top: React.FC = () => {
               </a>
             </li>
             <li>
-              <IconText>
-                GitHub
-              </IconText>
+              <IconText>GitHub</IconText>
               <a
                 href="https://github.com/hosonokotaro/"
                 target="_blank"
@@ -90,8 +80,7 @@ const FirstView = styled.section`
   margin: 0 auto;
   padding: 4em;
   text-align: center;
-  background: url(${picKitakuBg}) top
-    30% center no-repeat;
+  background: url(${picKitakuBg}) top 30% center no-repeat;
   background-size: cover;
 
   p {

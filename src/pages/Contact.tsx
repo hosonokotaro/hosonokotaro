@@ -10,29 +10,20 @@ const Contact: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>
-          CONTACT | {siteTitle}
-        </title>
+        <title>CONTACT | {siteTitle}</title>
       </Helmet>
       <Section
         title="Contact"
         content={
           <>
             <ContactImage>
-              <img
-                src={picHosono}
-                alt="細野"
-              />
+              <img src={picHosono} alt="細野" />
             </ContactImage>
-            <ContactSubTitle>
-              HOSONO KOTARO
-            </ContactSubTitle>
+            <ContactSubTitle>HOSONO KOTARO</ContactSubTitle>
             <ContactText>
               <ruby>
                 細野 広太郎
-                <rt>
-                  ほその こうたろう
-                </rt>
+                <rt>ほその こうたろう</rt>
               </ruby>
               <br />
               1985年生まれ

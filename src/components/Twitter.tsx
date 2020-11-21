@@ -1,30 +1,19 @@
-import React, {
-  useEffect,
-} from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components/macro';
 import Section from '../components/Section';
 import { siteTwitterName } from '../SiteSetting';
 
 const Twitter: React.FC = () => {
   useEffect(() => {
-    const scriptTag = document.createElement(
-      'script',
-    );
-    scriptTag.src =
-      'https://platform.twitter.com/widgets.js';
+    const scriptTag = document.createElement('script');
+    scriptTag.src = 'https://platform.twitter.com/widgets.js';
     scriptTag.charset = 'utf-8';
 
-    const showTimeLine = setTimeout(
-      () => {
-        document
-          .getElementById('twitter')
-          ?.appendChild(scriptTag);
-      },
-      300,
-    );
+    const showTimeLine = setTimeout(() => {
+      document.getElementById('twitter')?.appendChild(scriptTag);
+    }, 300);
 
-    return () =>
-      clearTimeout(showTimeLine);
+    return () => clearTimeout(showTimeLine);
   });
 
   return (
@@ -42,8 +31,7 @@ const Twitter: React.FC = () => {
               data-tweet-limit="5"
               href={`https://twitter.com/${siteTwitterName}?ref_src=twsrc%5Etfw`}
             >
-              Tweets by{' '}
-              {siteTwitterName}
+              Tweets by {siteTwitterName}
             </a>
           </TimeLine>
           <div

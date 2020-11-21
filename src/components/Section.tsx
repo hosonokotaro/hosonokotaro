@@ -7,9 +7,7 @@ type SectionProps = {
   content: JSX.Element;
 };
 
-const Section: React.FC<SectionProps> = (
-  props,
-) => {
+const Section: React.FC<SectionProps> = (props) => {
   return (
     <section
       id={props.id}

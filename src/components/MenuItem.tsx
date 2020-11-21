@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Link,
-  useRouteMatch,
-} from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 import Picture from './Picture';
@@ -15,25 +12,19 @@ type MenuItemProps = {
   active: boolean;
 };
 
-const MenuItem: React.FC<MenuItemProps> = (
-  props,
-) => {
+const MenuItem: React.FC<MenuItemProps> = (props) => {
   const match = useRouteMatch({
     path: props.to,
     exact: props.active,
   });
 
-  const matchSrc = match
-    ? props.currentImagePath
-    : props.imagePath;
+  const matchSrc = match ? props.currentImagePath : props.imagePath;
 
   return (
     <Item>
       <Link
         to={props.to}
-        className={
-          match ? 'link-current' : ''
-        }
+        className={match ? 'link-current' : ''}
         css={`
           display: inline-block;
           line-height: 4;
@@ -43,11 +34,7 @@ const MenuItem: React.FC<MenuItemProps> = (
           }
         `}
       >
-        <Picture
-          srcPC={matchSrc}
-          srcSP={matchSrc}
-          alt={props.label}
-        />
+        <Picture srcPC={matchSrc} srcSP={matchSrc} alt={props.label} />
       </Link>
     </Item>
   );

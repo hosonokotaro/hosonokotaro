@@ -24,27 +24,21 @@ const Menu: React.FC = () => {
           active={true}
           to="/"
           imagePath={txtNavTop}
-          currentImagePath={
-            txtNavTopActive
-          }
+          currentImagePath={txtNavTopActive}
           label="TOP"
         />
         <MenuItem
           active={false}
           to="/work/"
           imagePath={txtNavWork}
-          currentImagePath={
-            txtNavWorkActive
-          }
+          currentImagePath={txtNavWorkActive}
           label="WORK"
         />
         <MenuItem
           active={false}
           to="/contact/"
           imagePath={txtNavContact}
-          currentImagePath={
-            txtNavContactActive
-          }
+          currentImagePath={txtNavContactActive}
           label="CONTACT"
         />
       </MenuList>
