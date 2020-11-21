@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
-import Picture from './Picture';
+import Picture from '../components/Picture';
 
 type MenuItemProps = {
   label: string;
@@ -22,25 +22,14 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 
   return (
     <Item>
-      <Link
-        to={props.to}
-        className={match ? 'link-current' : ''}
-        css={`
-          display: inline-block;
-          line-height: 4;
-
-          &.link-current {
-            pointer-events: none;
-          }
-        `}
-      >
+      <StyledLink to={props.to} className={match ? 'link-current' : ''}>
         <Picture srcPC={matchSrc} srcSP={matchSrc} alt={props.label} />
-      </Link>
+      </StyledLink>
     </Item>
   );
 };
 
-const Item = styled.li`
+const Item = styled.div`
   position: relative;
 
   & + &:before {
@@ -53,6 +42,15 @@ const Item = styled.li`
     transform: rotate(45deg);
     pointer-events: none;
     content: '';
+  }
+`;
+
+const StyledLink = styled(Link)`
+  display: inline-block;
+  line-height: 4;
+
+  &.link-current {
+    pointer-events: none;
   }
 `;
 

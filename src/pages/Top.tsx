@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components/macro';
 import { siteTitle } from '../siteSetting';
+import Twitter from '../container/Twitter';
 import Section from '../components/Section';
 
 import picKitaku from '../images/pic_kitaku.png';

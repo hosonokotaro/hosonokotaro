@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import MenuItem from './MenuItem';
 
@@ -10,16 +10,10 @@ import txtNavWorkActive from '../images/txt_nav_work_active.png';
 import txtNavContact from '../images/txt_nav_contact.png';
 import txtNavContactActive from '../images/txt_nav_contact_active.png';
 
-const Menu: React.FC = () => {
+const MenuList: React.FC = () => {
   return (
-    <nav
-      css={`
-        position: sticky;
-        top: 0;
-        z-index: 1;
-      `}
-    >
-      <MenuList>
+    <StyledNav>
+      <StyledMenuList>
         <MenuItem
           active={true}
           to="/"
@@ -41,12 +35,18 @@ const Menu: React.FC = () => {
           currentImagePath={txtNavContactActive}
           label="CONTACT"
         />
-      </MenuList>
-    </nav>
+      </StyledMenuList>
+    </StyledNav>
   );
 };
 
-const MenuList = styled.ul`
+const StyledNav = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
+const StyledMenuList = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
@@ -54,4 +54,4 @@ const MenuList = styled.ul`
   border-bottom: 1px solid #333;
 `;
 
-export default Menu;
+export default MenuList;
