@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components/macro';
-import { siteTitle } from '../SiteSetting';
+import styled from 'styled-components';
+import { siteTitle } from '../siteSetting';
 import Section from '../components/Section';
 import picHosono from '../images/pic_hosono.jpg';
 import picMail from '../images/pic_mail.png';
@@ -10,29 +10,20 @@ const Contact: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>
-          CONTACT | {siteTitle}
-        </title>
+        <title>CONTACT | {siteTitle}</title>
       </Helmet>
       <Section
         title="Contact"
         content={
           <>
             <ContactImage>
-              <img
-                src={picHosono}
-                alt="細野"
-              />
+              <img src={picHosono} alt="細野" />
             </ContactImage>
-            <ContactSubTitle>
-              HOSONO KOTARO
-            </ContactSubTitle>
+            <ContactSubTitle>HOSONO KOTARO</ContactSubTitle>
             <ContactText>
               <ruby>
                 細野 広太郎
-                <rt>
-                  ほその こうたろう
-                </rt>
+                <rt>ほその こうたろう</rt>
               </ruby>
               <br />
               1985年生まれ
@@ -53,17 +44,7 @@ const Contact: React.FC = () => {
               <br />
               <br />
               <a href="mailto:hosono1985@gmail.com">
-                <img
-                  src={picMail}
-                  alt="Mail"
-                  css={`
-                    width: 25px;
-
-                    @media (min-width: 768px) {
-                      width: auto;
-                    }
-                  `}
-                />
+                <MailIcon src={picMail} alt="Mail" />
               </a>
             </ContactText>
           </>
@@ -113,6 +94,14 @@ const ContactText = styled.p`
 
   @media (min-width: 768px) {
     font-size: 1.8rem;
+  }
+`;
+
+const MailIcon = styled.img`
+  width: 25px;
+
+  @media (min-width: 768px) {
+    width: auto;
   }
 `;
 

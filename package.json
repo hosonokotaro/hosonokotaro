@@ -63,7 +63,6 @@
   "prettier": {
     "semi": true,
     "singleQuote": true,
-    "printWidth": 40,
     "trailingComma": "all"
   }
 }
