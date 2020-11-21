@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components/macro';
 
 import Section from '../components/Section';
-import { siteTitle } from '../SiteSetting';
+import { siteTitle } from '../siteSetting';
 
 const Work: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components/macro';
-import { siteTitle } from '../SiteSetting';
+import { siteTitle } from '../siteSetting';
 import Section from '../components/Section';
 import picHosono from '../images/pic_hosono.jpg';
 import picMail from '../images/pic_mail.png';

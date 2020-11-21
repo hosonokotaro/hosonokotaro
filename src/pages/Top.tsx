@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components/macro';
-import { siteTitle } from '../SiteSetting';
-import Twitter from '../components/Twitter';
+import { siteTitle } from '../siteSetting';
 import Section from '../components/Section';
 
 import picKitaku from '../images/pic_kitaku.png';

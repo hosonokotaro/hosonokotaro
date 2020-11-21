@@ -6,7 +6,7 @@ import {
   siteUrl,
   siteDescription,
   siteTwitterName,
-} from './SiteSetting';
+} from './siteSetting';
 
 import AppRouter from './AppRouter';
 import Picture from './components/Picture';
