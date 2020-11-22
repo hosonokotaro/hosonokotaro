@@ -1,39 +1,19 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import MenuItem from './MenuItem';
-
-import txtNavTop from '../images/txt_nav_top.png';
-import txtNavTopActive from '../images/txt_nav_top_active.png';
-import txtNavWork from '../images/txt_nav_work.png';
-import txtNavWorkActive from '../images/txt_nav_work_active.png';
-import txtNavContact from '../images/txt_nav_contact.png';
-import txtNavContactActive from '../images/txt_nav_contact_active.png';
+import MenuItem from '../components/MenuItem';
 
 const MenuList: React.FC = () => {
+  const { pathname } = useLocation();
+
   return (
     <StyledNav>
       <StyledMenuList>
         <MenuItem
-          active={true}
-          to="/"
-          imagePath={txtNavTop}
-          currentImagePath={txtNavTopActive}
-          label="TOP"
-        />
-        <MenuItem
-          active={false}
-          to="/work/"
-          imagePath={txtNavWork}
-          currentImagePath={txtNavWorkActive}
-          label="WORK"
-        />
-        <MenuItem
-          active={false}
-          to="/contact/"
-          imagePath={txtNavContact}
-          currentImagePath={txtNavContactActive}
-          label="CONTACT"
+          top={pathname === '/'}
+          work={pathname === '/work/'}
+          contact={pathname === '/contact/'}
         />
       </StyledMenuList>
     </StyledNav>
