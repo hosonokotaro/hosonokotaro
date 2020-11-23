@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import MenuList from './container/MenuList';
-import RoutingAnimation from './container/RoutingAnimation';
+import MenuList from './components/MenuList';
+import RoutingAnimation from './components/RoutingAnimation';
 
 const AppRouter: React.FC = () => {
   return (
