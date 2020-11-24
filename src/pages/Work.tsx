@@ -15,7 +15,9 @@ const Work: React.FC = () => {
         title="Work"
         content={
           <WorkList>
-            <dt>2019-2020</dt>
+            <dt>2020 -</dt>
+            <dd>動画配信サービス運営会社勤務</dd>
+            <dt>2019</dt>
             <dd>大手金融会社にてサイト改修</dd>
             <dt>2018</dt>
             <dd>大手ラジオ局企画のwebサイト</dd>
