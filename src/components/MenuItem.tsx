@@ -16,35 +16,32 @@ type MenuItemProps = {
   contact: boolean;
 };
 
-const MenuItem: React.FC<MenuItemProps> = (props) => {
+const MenuItem: React.FC<MenuItemProps> = ({ top, work, contact }) => {
   return (
     <>
       <StyledMenuItem>
-        <StyledLink to="/" className={props.top ? 'link-current' : ''}>
+        <StyledLink to="/" className={top ? 'link-current' : ''}>
           <Picture
-            srcPC={props.top ? txtNavTopActive : txtNavTop}
-            srcSP={props.top ? txtNavTopActive : txtNavTop}
+            srcPC={top ? txtNavTopActive : txtNavTop}
+            srcSP={top ? txtNavTopActive : txtNavTop}
             alt="TOP"
           />
         </StyledLink>
       </StyledMenuItem>
       <StyledMenuItem>
-        <StyledLink to="/work/" className={props.work ? 'link-current' : ''}>
+        <StyledLink to="/work/" className={work ? 'link-current' : ''}>
           <Picture
-            srcPC={props.work ? txtNavWorkActive : txtNavWork}
-            srcSP={props.work ? txtNavWorkActive : txtNavWork}
+            srcPC={work ? txtNavWorkActive : txtNavWork}
+            srcSP={work ? txtNavWorkActive : txtNavWork}
             alt="WORK"
           />
         </StyledLink>
       </StyledMenuItem>
       <StyledMenuItem>
-        <StyledLink
-          to="/contact/"
-          className={props.contact ? 'link-current' : ''}
-        >
+        <StyledLink to="/contact/" className={contact ? 'link-current' : ''}>
           <Picture
-            srcPC={props.contact ? txtNavContactActive : txtNavContact}
-            srcSP={props.contact ? txtNavContactActive : txtNavContact}
+            srcPC={contact ? txtNavContactActive : txtNavContact}
+            srcSP={contact ? txtNavContactActive : txtNavContact}
             alt="CONTACT"
           />
         </StyledLink>

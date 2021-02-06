@@ -1,20 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Section from '../components/Section';
 import TwitterTimeline from '../components/TwitterTimeline';
 import { siteTwitterName } from '../siteSetting';
 
 const Twitter: React.FC = () => {
+  const [scriptTag, setScriptTag] = useState<HTMLScriptElement | undefined>();
+  const [twitterWidget, setTwitterWidget] = useState<HTMLElement | null>();
+
   useEffect(() => {
-    const scriptTag = document.createElement('script');
-    scriptTag.src = 'https://platform.twitter.com/widgets.js';
-
-    const showTimeLine = setTimeout(() => {
-      document.getElementById('twitter')?.appendChild(scriptTag);
-    }, 300);
-
-    return () => clearTimeout(showTimeLine);
+    setScriptTag(document.createElement('script'));
   }, []);
+
+  useEffect(() => {
+    if (!scriptTag) return;
+
+    scriptTag.src = 'https://platform.twitter.com/widgets.js';
+    setTwitterWidget(document.getElementById('twitter'));
+  }, [scriptTag]);
+
+  useEffect(() => {
+    if (twitterWidget && scriptTag) {
+      const showTimeLine = setTimeout(() => {
+        twitterWidget.appendChild(scriptTag);
+      }, 1000);
+
+      return () => clearTimeout(showTimeLine);
+    }
+  }, [scriptTag, twitterWidget]);
 
   return (
     <Section
