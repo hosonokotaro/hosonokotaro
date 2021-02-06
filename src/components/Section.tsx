@@ -8,11 +8,11 @@ type SectionProps = {
   content: JSX.Element;
 };
 
-const Section: React.FC<SectionProps> = (props) => {
+const Section: React.FC<SectionProps> = ({ id = '', title, content }) => {
   return (
-    <StyledSection id={props.id}>
-      <Title>{props.title}</Title>
-      {props.content}
+    <StyledSection id={id}>
+      <Title>{title}</Title>
+      {content}
     </StyledSection>
   );
 };
