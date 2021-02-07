@@ -59,7 +59,7 @@ const config: Configuration = {
   devtool: 'source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
+    new HTMLWebpackPlugin({ template: './public/index.html' }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
