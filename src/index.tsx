@@ -1,9 +1,10 @@
-import React from 'react';
-import { hydrate, render } from 'react-dom';
-import App from './App';
 import 'normalize.css';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
+
+import React from 'react';
+import { hydrate, render } from 'react-dom';
+
+import App from './App';
 
 const Index: React.FC = () => (
   <React.StrictMode>
@@ -18,5 +19,3 @@ if (rootElement?.hasChildNodes()) {
 } else {
   render(<Index />, rootElement);
 }
-
-serviceWorker.unregister();

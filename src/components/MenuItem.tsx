@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Picture from './Picture';
-import { StyledMenuItem, StyledLink } from './styledMenuItem';
-
+import txtNavContact from '../images/txt_nav_contact.png';
+import txtNavContactActive from '../images/txt_nav_contact_active.png';
 import txtNavTop from '../images/txt_nav_top.png';
 import txtNavTopActive from '../images/txt_nav_top_active.png';
 import txtNavWork from '../images/txt_nav_work.png';
 import txtNavWorkActive from '../images/txt_nav_work_active.png';
-import txtNavContact from '../images/txt_nav_contact.png';
-import txtNavContactActive from '../images/txt_nav_contact_active.png';
+import Picture from './Picture';
+import { StyledLink, StyledMenuItem } from './styledMenuItem';
 
 type MenuItemProps = {
   top: boolean;
