@@ -1,5 +1,21 @@
+import 'normalize.css';
+import './index.css';
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 
 import App from './App';
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const Index: React.FC = () => (
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+const rootElement = document.getElementById('root');
+
+if (rootElement?.hasChildNodes()) {
+  hydrate(<Index />, rootElement);
+} else {
+  render(<Index />, rootElement);
+}

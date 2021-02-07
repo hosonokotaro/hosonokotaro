@@ -1,18 +1,29 @@
-import './App.css';
-
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
+import Helmet from 'react-helmet';
 
-import Message from './components/Message';
+import AppRouter from './AppRouter';
+import Picture from './components/Picture';
+import txtHeadTtl from './images/txt_head_ttl.png';
+import { siteTitle } from './siteSetting';
+import { Footer, StyledHeader } from './styledApp';
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <h1>Hello, App.</h1>
+  const fullYear = () => new Date().getFullYear();
 
-      <Message text="メッセージをprops で渡す" />
-    </div>
+  return (
+    <>
+      <Helmet>
+        <title>{siteTitle}</title>
+      </Helmet>
+      <StyledHeader>
+        <h1>
+          <Picture srcPC={txtHeadTtl} srcSP={txtHeadTtl} alt={siteTitle} />
+        </h1>
+      </StyledHeader>
+      <AppRouter />
+      <Footer>© {fullYear()} HOSONO KOTARO</Footer>
+    </>
   );
 };
 
-export default hot(App);
+export default App;
