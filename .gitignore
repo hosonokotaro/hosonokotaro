@@ -6,7 +6,6 @@
 .pnp.js
 /.firebase
 /.vscode
-/dist
 
 .DS_Store
 

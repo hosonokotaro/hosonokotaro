@@ -14,7 +14,7 @@ const config: Configuration = {
   mode: 'development',
   entry: ['@babel/polyfill', './src/index.tsx'],
   output: {
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, 'build/'),
     filename: 'bundle.js',
     publicPath: '/',
   },
