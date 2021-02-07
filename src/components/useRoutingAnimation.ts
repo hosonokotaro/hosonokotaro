@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const useRoutingAnimation = () => {
   const [isAnimation, setIsAnimation] = useState(true);
@@ -9,7 +9,7 @@ const useRoutingAnimation = () => {
       () => {
         setIsAnimation(false);
       },
-      false,
+      false
     );
   }, []);
 

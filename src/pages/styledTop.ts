@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import picKitakuBg from '../images/pic_kitaku_bg.jpg';
 
 export const FirstView = styled.section`

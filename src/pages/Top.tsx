@@ -1,12 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { siteTitle } from '../siteSetting';
-import Twitter from '../components/Twitter';
-import Section from '../components/Section';
-import { FirstView, StyledH2, ExternalLinkList, IconText } from './styledTop';
 
+import Section from '../components/Section';
+import Twitter from '../components/Twitter';
 import picKitaku from '../images/pic_kitaku.png';
 import txtKitakuTtl from '../images/txt_kitaku_ttl.png';
+import { siteTitle } from '../siteSetting';
+import { ExternalLinkList, FirstView, IconText, StyledH2 } from './styledTop';
 
 const Top: React.FC = () => {
   return (

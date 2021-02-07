@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import MenuItem from './MenuItem';
-import { StyledNav, StyledMenuList } from './styledMenuList';
+import { StyledMenuList, StyledNav } from './styledMenuList';
 
 const MenuList: React.FC = () => {
   const { pathname } = useLocation();
