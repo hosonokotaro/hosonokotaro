@@ -20,29 +20,29 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with: 
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
-    - name: Build
-      run: |
-        npm ci
-        npm run build
+      - name: Build
+        run: |
+          npm ci
+          npm run build
 
   release:
     needs: [build]
@@ -54,33 +54,33 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with: 
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
-    - name: Build
-      run: |
-        npm ci
-        REACT_APP_GTAG_ID=${{ secrets.GTAG_ID }} npm run build
+      - name: Build
+        run: |
+          npm ci
+          npm run build
 
-    - name: Deploy
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
