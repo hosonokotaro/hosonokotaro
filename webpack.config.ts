@@ -1,6 +1,6 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack, { Configuration as WebpackConfiguration } from 'webpack';
@@ -12,7 +12,7 @@ interface Configuration extends WebpackConfiguration {
 
 const config: Configuration = {
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.tsx'],
+  entry: ['./src/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'build/'),
     filename: 'bundle.js',
@@ -42,9 +42,7 @@ const config: Configuration = {
   },
   resolve: {
     extensions: ['*', '.js', '.ts', '.tsx'],
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
+    alias: {},
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
@@ -70,12 +68,15 @@ const config: Configuration = {
         },
       ],
     }),
-    new ForkTsCheckerPlugin({
+    new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
           semantic: true,
           syntactic: true,
         },
+      },
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}',
       },
     }),
   ],
