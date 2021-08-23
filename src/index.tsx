@@ -2,20 +2,23 @@ import 'normalize.css';
 import './index.css';
 
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import App from './App';
 
-const Index: React.FC = () => (
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const isDevelopment = process.env.NODE_ENV === 'development';
 
-const rootElement = document.getElementById('root');
+const renderMethod =
+  isDevelopment && module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
-if (rootElement?.hasChildNodes()) {
-  hydrate(<Index />, rootElement);
-} else {
-  render(<Index />, rootElement);
+const render = () => {
+  renderMethod(<App />, document.getElementById('root'));
+};
+
+if (isDevelopment && module.hot) {
+  module.hot.accept('./App', () => {
+    render();
+  });
 }
+
+render();
