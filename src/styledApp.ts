@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
+export const Header = styled.header`
   text-align: center;
 `;
 
 export const Footer = styled.footer`
-  padding: 20px 0;
+  border-top: 1px solid #333;
+`;
+
+export const Copyright = styled.div`
+  margin: 2em 0;
   line-height: 1;
   text-align: center;
-  border-top: 1px solid #333;
   font-size: 1.2rem;
   color: #000;
 

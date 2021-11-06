@@ -12,6 +12,6 @@ export const TimeLine = styled.div`
 `;
 
 export const FollowLinkWrapper = styled.div`
-  padding-top: 2em;
+  margin-top: 2em;
   line-height: 1;
 `;
