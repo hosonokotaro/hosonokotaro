@@ -5,7 +5,7 @@ import AppRouter from './AppRouter';
 import Picture from './components/Picture';
 import txtHeadTtl from './images/txt_head_ttl.png';
 import { siteTitle } from './siteSetting';
-import { Footer, StyledHeader } from './styledApp';
+import { Copyright, Footer, Header } from './styledApp';
 
 const App: React.FC = () => {
   const fullYear = () => new Date().getFullYear();
@@ -15,13 +15,15 @@ const App: React.FC = () => {
       <Helmet>
         <title>{siteTitle}</title>
       </Helmet>
-      <StyledHeader>
+      <Header>
         <h1>
           <Picture srcPC={txtHeadTtl} srcSP={txtHeadTtl} alt={siteTitle} />
         </h1>
-      </StyledHeader>
+      </Header>
       <AppRouter />
-      <Footer>© {fullYear()} HOSONO KOTARO</Footer>
+      <Footer>
+        <Copyright>© {fullYear()} HOSONO KOTARO</Copyright>
+      </Footer>
     </>
   );
 };

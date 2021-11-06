@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const ContactImage = styled.figure`
   position: relative;
   width: 180px;
-  margin: 0 auto;
-  padding-top: 2em;
+  margin: 2em auto 0 auto;
 
   @media (min-width: 768px) {
     width: 360px;
@@ -24,7 +23,7 @@ export const ContactImage = styled.figure`
 `;
 
 export const ContactSubTitle = styled.h3`
-  padding-top: 0.8em;
+  margin-top: 0.8em;
   line-height: 1;
   font-size: 1.8rem;
   text-align: center;
@@ -35,7 +34,7 @@ export const ContactSubTitle = styled.h3`
 `;
 
 export const ContactText = styled.p`
-  padding-top: 2em;
+  margin-top: 2em;
   font-size: 1.4rem;
 
   @media (min-width: 768px) {

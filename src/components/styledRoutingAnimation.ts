@@ -4,12 +4,7 @@ export const Article = styled.article`
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  min-height: calc(100vh - 102px - 53px);
-  padding-bottom: 40px;
-
-  @media (min-width: 768px) {
-    min-height: calc(100vh - 171px - 53px);
-  }
+  margin-bottom: 4em;
 `;
 
 export const AreaTransition = styled.div`

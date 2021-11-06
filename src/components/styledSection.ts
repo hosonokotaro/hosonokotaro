@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   max-width: 768px;
-  margin: 0 auto;
-  padding: 40px 40px 0 40px;
+  margin: 4em auto 0 auto;
+  padding: 0 4em;
 `;
 
 export const Title = styled.h2`
