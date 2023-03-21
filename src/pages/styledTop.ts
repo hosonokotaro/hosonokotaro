@@ -28,22 +28,35 @@ export const StyledH2 = styled.h2`
   margin-top: 2em;
 `;
 
-export const ExternalLinkList = styled.ul`
+export const ExternalLinkList = styled.div`
   margin-top: 4em;
 `;
 
-export const LinkItem = styled.li`
-  margin-top: 5px;
-  font-size: 1.4rem;
+export const LinkItem = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1em;
 
   @media (min-width: 768px) {
     font-size: 1.8rem;
   }
 `;
 
-export const IconText = styled.span`
+export const IconText = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
   margin-right: 5px;
   padding: 0 5px;
+  font-size: 1.6rem;
   background: #000;
   color: #fff;
+`;
+
+export const LinkText = styled.a`
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.8rem;
 `;
