@@ -42,21 +42,14 @@ export const LinkItem = styled.div`
   }
 `;
 
-export const IconText = styled.div`
-  display: flex;
+export const LinkText = styled.a`
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
+  min-width: 100px;
   height: 40px;
-  margin-right: 5px;
   padding: 0 5px;
   font-size: 1.6rem;
   background: #000;
   color: #fff;
-`;
-
-export const LinkText = styled.a`
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.8rem;
 `;
