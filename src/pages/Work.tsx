@@ -25,6 +25,8 @@ const Work: React.FC = () => {
             <Description>アニメーション制作会社ブランドページ</Description>
             <Description>フリーランスとして独立</Description>
             <Title>2017</Title>
+            <Description>大手ゲームプラットフォーム運営会社勤務</Description>
+            <Title>2014 -</Title>
             <Description>
               地元、赤羽の絵本屋さんの
               <a
@@ -36,7 +38,6 @@ const Work: React.FC = () => {
               </a>
               制作
             </Description>
-            <Description>大手ゲームプラットフォーム運営会社勤務</Description>
           </WorkList>
         }
       />
