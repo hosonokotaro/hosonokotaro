@@ -11,7 +11,6 @@ import {
   ExternalLinkList,
   FirstView,
   FirstViewContent,
-  IconText,
   LinkItem,
   LinkText,
   StyledH2,
@@ -45,33 +44,30 @@ const Top: React.FC = () => {
         content={
           <ExternalLinkList>
             <LinkItem>
-              <IconText>個人ブログ</IconText>
               <LinkText
                 href="https://techblog.hosonokotaro.jp/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://techblog.hosonokotaro.jp/
+                個人ブログ
               </LinkText>
             </LinkItem>
             <LinkItem>
-              <IconText>GitHub</IconText>
               <LinkText
                 href="https://github.com/hosonokotaro/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://github.com/hosonokotaro/
+                GitHub
               </LinkText>
             </LinkItem>
             <LinkItem>
-              <IconText>note</IconText>
               <LinkText
                 href="https://note.mu/hosonokotaro"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://note.mu/hosonokotaro
+                note
               </LinkText>
             </LinkItem>
           </ExternalLinkList>
