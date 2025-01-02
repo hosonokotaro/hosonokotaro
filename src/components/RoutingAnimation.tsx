@@ -2,11 +2,11 @@ import React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import Contact from '../pages/Contact';
-import Top from '../pages/Top';
-import Work from '../pages/Work';
-import { AreaTransition, Article } from './styledRoutingAnimation';
-import useRoutingAnimation from './useRoutingAnimation';
+import { AreaTransition, Article } from '~/components/styledRoutingAnimation';
+import useRoutingAnimation from '~/components/useRoutingAnimation';
+import Contact from '~/pages/Contact';
+import Top from '~/pages/Top';
+import Work from '~/pages/Work';
 
 const RoutingAnimation: React.FC = () => {
   const location = useLocation();

@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { FollowLinkWrapper, TimeLine } from './styledTwitterTimeline';
+import {
+  FollowLinkWrapper,
+  TimeLine,
+} from '~/components/styledTwitterTimeline';
 
 type TwitterTimelineProps = {
   siteTwitterName: string;

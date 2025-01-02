@@ -1,10 +1,10 @@
 import 'normalize.css';
-import './index.css';
+import '~/index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from '~/App';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -16,7 +16,7 @@ const render = () => {
 };
 
 if (isDevelopment && module.hot) {
-  module.hot.accept('./App', () => {
+  module.hot.accept('~/App', () => {
     render();
   });
 }

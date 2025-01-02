@@ -9,7 +9,9 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": ["./src", "./types/**/*.d.ts"]
 }
