@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Section from '../components/Section';
-import { siteTitle } from '../siteSetting';
-import { Description, Title, WorkList } from './styledWork';
+import Section from '~/components/Section';
+import { Description, Title, WorkList } from '~/pages/styledWork';
+import { siteTitle } from '~/siteSetting';
 
 const Work: React.FC = () => {
   return (

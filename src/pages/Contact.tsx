@@ -1,16 +1,16 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Section from '../components/Section';
-import picHosono from '../images/pic_hosono.jpg';
-import picMail from '../images/pic_mail.png';
-import { siteTitle } from '../siteSetting';
+import Section from '~/components/Section';
+import picHosono from '~/images/pic_hosono.jpg';
+import picMail from '~/images/pic_mail.png';
 import {
   ContactImage,
   ContactSubTitle,
   ContactText,
   MailIcon,
-} from './styledContact';
+} from '~/pages/styledContact';
+import { siteTitle } from '~/siteSetting';
 
 const Contact: React.FC = () => {
   return (

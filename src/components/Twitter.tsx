@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import Section from '../components/Section';
-import TwitterTimeline from '../components/TwitterTimeline';
-import { siteTwitterName } from '../siteSetting';
+import Section from '~/components/Section';
+import TwitterTimeline from '~/components/TwitterTimeline';
+import { siteTwitterName } from '~/siteSetting';
 
 const Twitter: React.FC = () => {
   const [scriptTag, setScriptTag] = useState<HTMLScriptElement | undefined>();

@@ -1,11 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import AppRouter from './AppRouter';
-import Picture from './components/Picture';
-import txtHeadTtl from './images/txt_head_ttl.png';
-import { siteTitle } from './siteSetting';
-import { Copyright, Footer, Header } from './styledApp';
+import AppRouter from '~/AppRouter';
+import Picture from '~/components/Picture';
+import txtHeadTtl from '~/images/txt_head_ttl.png';
+import { siteTitle } from '~/siteSetting';
+import { Copyright, Footer, Header } from '~/styledApp';
 
 const App: React.FC = () => {
   const fullYear = () => new Date().getFullYear();

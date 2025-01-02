@@ -42,7 +42,9 @@ const config: Configuration = {
   },
   resolve: {
     extensions: ['*', '.js', '.ts', '.tsx'],
-    alias: {},
+    alias: {
+      '~': path.resolve(__dirname, 'src/'),
+    },
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
