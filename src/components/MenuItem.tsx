@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Picture from '~/components/Picture';
-import { StyledLink, StyledMenuItem } from '~/components/styledMenuItem';
+import Picture from '@/Picture';
+import { StyledLink, StyledMenuItem } from '@/styledMenuItem';
 import txtNavContact from '~/images/txt_nav_contact.png';
 import txtNavContactActive from '~/images/txt_nav_contact_active.png';
 import txtNavTop from '~/images/txt_nav_top.png';

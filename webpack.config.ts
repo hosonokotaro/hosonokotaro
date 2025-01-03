@@ -44,6 +44,7 @@ const config: Configuration = {
     extensions: ['*', '.js', '.ts', '.tsx'],
     alias: {
       '~': path.resolve(__dirname, 'src/'),
+      '@': path.resolve(__dirname, 'src/components/'),
     },
   },
   devServer: {

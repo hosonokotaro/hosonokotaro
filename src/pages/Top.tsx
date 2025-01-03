@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Section from '~/components/Section';
-import Twitter from '~/components/Twitter';
+import Section from '@/Section';
+import Twitter from '@/Twitter';
 import picKitaku from '~/images/pic_kitaku.png';
 import txtKitakuTtl from '~/images/txt_kitaku_ttl.png';
 import {

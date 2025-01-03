@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import Section from '~/components/Section';
-import TwitterTimeline from '~/components/TwitterTimeline';
+import Section from '@/Section';
+import TwitterTimeline from '@/TwitterTimeline';
 import { siteTwitterName } from '~/siteSetting';
 
 const Twitter: React.FC = () => {

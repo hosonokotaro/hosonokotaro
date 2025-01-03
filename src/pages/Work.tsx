@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Section from '~/components/Section';
+import Section from '@/Section';
 import { Description, Title, WorkList } from '~/pages/styledWork';
 import { siteTitle } from '~/siteSetting';
 
