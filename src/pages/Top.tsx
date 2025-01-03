@@ -3,8 +3,6 @@ import Helmet from 'react-helmet';
 
 import Section from '@/Section';
 import Twitter from '@/Twitter';
-import picKitaku from '~/images/pic_kitaku.png';
-import txtKitakuTtl from '~/images/txt_kitaku_ttl.png';
 import {
   Description,
   ExternalLinkList,
@@ -25,10 +23,10 @@ const Top: React.FC = () => {
       <FirstView>
         <FirstViewContent>
           <figure>
-            <img src={picKitaku} alt="北区" />
+            <img src="/images/pic_kitaku.png" alt="北区" />
           </figure>
           <StyledH2>
-            <img src={txtKitakuTtl} alt="東京都北区赤羽" />
+            <img src="/images/txt_kitaku_ttl.png" alt="東京都北区赤羽" />
           </StyledH2>
           <Description>
             東京都北区赤羽、北の玄関口。
