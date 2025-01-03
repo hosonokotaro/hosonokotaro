@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledSection, Title } from '~/components/styledSection';
+import { StyledSection, Title } from '@/styledSection';
 
 type SectionProps = {
   id?: string;

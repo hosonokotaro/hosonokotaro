@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Section from '~/components/Section';
+import Section from '@/Section';
 import picHosono from '~/images/pic_hosono.jpg';
 import picMail from '~/images/pic_mail.png';
 import {
