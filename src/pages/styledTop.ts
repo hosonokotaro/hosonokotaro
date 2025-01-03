@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FirstView = styled.section`
   margin: 0 auto;
   padding: 4em;
-  background: url(images/pic_kitaku_bg.jpg) top 30% center no-repeat;
+  background: url(/images/pic_kitaku_bg.jpg) top 30% center no-repeat;
   background-size: cover;
 `;
 
