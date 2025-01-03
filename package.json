@@ -9,7 +9,8 @@
     "build": "webpack --mode=production",
     "lint": "eslint './**/*.{ts,tsx}' --fix",
     "prettier-format": "prettier --config .prettierrc './**/*.{ts,tsx}' --write",
-    "test": "jest"
+    "test": "jest",
+    "type-check": "tsc --noEmit --skipLibCheck"
   },
   "author": "",
   "license": "MIT",
