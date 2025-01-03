@@ -26,7 +26,10 @@ const config: Configuration = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env'],
+            presets: [
+              ['@babel/preset-env', { targets: 'defaults' }],
+              '@babel/preset-react',
+            ],
           },
         },
       },
@@ -36,7 +39,7 @@ const config: Configuration = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
     ],
   },
@@ -48,14 +51,13 @@ const config: Configuration = {
     },
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    hotOnly: true,
-    historyApiFallback: true,
-    watchOptions: {
-      poll: 1000,
-      ignored: ['node_modules'],
+    static: {
+      directory: path.join(__dirname, 'public/'),
     },
+    port: 3000,
+    hot: true,
+    historyApiFallback: true,
+    watchFiles: ['src/**/*', 'public/**/*'],
   },
   devtool: 'source-map',
   plugins: [
