@@ -2,8 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import Section from '@/Section';
-import picHosono from '~/images/pic_hosono.jpg';
-import picMail from '~/images/pic_mail.png';
 import {
   ContactImage,
   ContactSubTitle,
@@ -23,7 +21,7 @@ const Contact: React.FC = () => {
         content={
           <>
             <ContactImage>
-              <img src={picHosono} alt="細野" />
+              <img src="/images/pic_hosono.jpg" alt="細野" />
             </ContactImage>
             <ContactSubTitle>HOSONO KOTARO</ContactSubTitle>
             <ContactText>
@@ -50,7 +48,7 @@ const Contact: React.FC = () => {
               <br />
               <br />
               <a href="mailto:hosono1985@gmail.com">
-                <MailIcon src={picMail} alt="Mail" />
+                <MailIcon src="/images/pic_mail.png" alt="Mail" />
               </a>
             </ContactText>
           </>

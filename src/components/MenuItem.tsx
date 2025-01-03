@@ -2,12 +2,6 @@ import React from 'react';
 
 import Picture from '@/Picture';
 import { StyledLink, StyledMenuItem } from '@/styledMenuItem';
-import txtNavContact from '~/images/txt_nav_contact.png';
-import txtNavContactActive from '~/images/txt_nav_contact_active.png';
-import txtNavTop from '~/images/txt_nav_top.png';
-import txtNavTopActive from '~/images/txt_nav_top_active.png';
-import txtNavWork from '~/images/txt_nav_work.png';
-import txtNavWorkActive from '~/images/txt_nav_work_active.png';
 
 type MenuItemProps = {
   top: boolean;
@@ -21,8 +15,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ top, work, contact }) => {
       <StyledMenuItem>
         <StyledLink to="/" className={top ? 'link-current' : ''}>
           <Picture
-            srcPC={top ? txtNavTopActive : txtNavTop}
-            srcSP={top ? txtNavTopActive : txtNavTop}
+            srcPC={
+              top ? '/images/txt_nav_top_active.png' : '/images/txt_nav_top.png'
+            }
+            srcSP={
+              top ? '/images/txt_nav_top_active.png' : '/images/txt_nav_top.png'
+            }
             alt="TOP"
           />
         </StyledLink>
@@ -30,8 +28,16 @@ const MenuItem: React.FC<MenuItemProps> = ({ top, work, contact }) => {
       <StyledMenuItem>
         <StyledLink to="/work/" className={work ? 'link-current' : ''}>
           <Picture
-            srcPC={work ? txtNavWorkActive : txtNavWork}
-            srcSP={work ? txtNavWorkActive : txtNavWork}
+            srcPC={
+              work
+                ? '/images/txt_nav_work_active.png'
+                : '/images/txt_nav_work.png'
+            }
+            srcSP={
+              work
+                ? '/images/txt_nav_work_active.png'
+                : '/images/txt_nav_work.png'
+            }
             alt="WORK"
           />
         </StyledLink>
@@ -39,8 +45,16 @@ const MenuItem: React.FC<MenuItemProps> = ({ top, work, contact }) => {
       <StyledMenuItem>
         <StyledLink to="/contact/" className={contact ? 'link-current' : ''}>
           <Picture
-            srcPC={contact ? txtNavContactActive : txtNavContact}
-            srcSP={contact ? txtNavContactActive : txtNavContact}
+            srcPC={
+              contact
+                ? '/images/txt_nav_contact_active.png'
+                : '/images/txt_nav_contact.png'
+            }
+            srcSP={
+              contact
+                ? '/images/txt_nav_contact_active.png'
+                : '/images/txt_nav_contact.png'
+            }
             alt="CONTACT"
           />
         </StyledLink>

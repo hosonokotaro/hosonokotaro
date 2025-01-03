@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 
 import Picture from '@/Picture';
 import AppRouter from '~/AppRouter';
-import txtHeadTtl from '~/images/txt_head_ttl.png';
 import { siteTitle } from '~/siteSetting';
 import { Copyright, Footer, Header } from '~/styledApp';
 
@@ -17,7 +16,11 @@ const App: React.FC = () => {
       </Helmet>
       <Header>
         <h1>
-          <Picture srcPC={txtHeadTtl} srcSP={txtHeadTtl} alt={siteTitle} />
+          <Picture
+            srcPC="/images/txt_head_ttl.png"
+            srcSP="/images/txt_head_ttl.png"
+            alt={siteTitle}
+          />
         </h1>
       </Header>
       <AppRouter />
