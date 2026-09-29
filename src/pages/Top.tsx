@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import Section from '@/Section';
-import Twitter from '@/Twitter';
 import {
   Description,
   ExternalLinkList,
@@ -12,7 +11,7 @@ import {
   LinkText,
   StyledH2,
 } from '~/pages/styledTop';
-import { siteTitle } from '~/siteSetting';
+import { siteTitle, siteTwitterName } from '~/siteSetting';
 
 const Top: React.FC = () => {
   return (
@@ -61,17 +60,16 @@ const Top: React.FC = () => {
             </LinkItem>
             <LinkItem>
               <LinkText
-                href="https://note.mu/hosonokotaro"
+                href={`https://x.com/${siteTwitterName}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                note
+                X
               </LinkText>
             </LinkItem>
           </ExternalLinkList>
         }
       />
-      <Twitter />
     </>
   );
 };
