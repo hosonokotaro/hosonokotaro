@@ -17,5 +17,5 @@
 - This is a React 17 single-page site. The render entrypoint is `src/index.tsx`; `App` owns the global shell and `src/components/RoutingAnimation.tsx` is the route table for `/`, `/work`, and `/contact`.
 - Keep `React` in scope in JSX files: TypeScript uses the classic `jsx: react` transform.
 - Import aliases are deliberately shared across TypeScript, Webpack, and Jest: `~/...` maps to `src/...`, and `@/...` maps to `src/components/...`.
-- Browser-served images and static files belong in `public/` and are referenced with root-relative paths such as `/images/...`; production deploys the generated `build/` directory to Firebase Hosting with an SPA rewrite to `index.html`.
+- Browser-served images and static files belong in `public/` and are referenced with root-relative paths such as `/images/...`; the production site is the generated `build/` directory, and because routing uses `BrowserRouter`, the host must rewrite unknown paths to `index.html`.
 - ESLint requires simple-import-sort ordering and treats Prettier violations as errors. Jest uses `ts-jest`, Testing Library DOM matchers, and a setup that stubs `window.scroll`/`scrollTo`.
