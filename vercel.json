@@ -2,6 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "build",
-  "trailingSlash": false,
+  "trailingSlash": true,
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
