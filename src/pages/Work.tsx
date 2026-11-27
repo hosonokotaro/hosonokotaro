@@ -15,17 +15,16 @@ const Work: React.FC = () => {
         title="Work"
         content={
           <WorkList>
-            <Title>2020 -</Title>
-            <Description>動画配信サービス運営会社勤務</Description>
-            <Title>2019</Title>
-            <Description>大手金融会社にてサイト改修</Description>
-            <Title>2018</Title>
-            <Description>大手ラジオ局企画のwebサイト</Description>
-            <Description>大手自動車メーカーLP多数</Description>
-            <Description>アニメーション制作会社ブランドページ</Description>
-            <Description>フリーランスとして独立</Description>
-            <Title>2017</Title>
-            <Description>大手ゲームプラットフォーム運営会社勤務</Description>
+            <Title>2020 - 2026</Title>
+            <Description>動画配信会社の web サイト作成</Description>
+            <Title>2019 - 2020</Title>
+            <Description>金融会社のサービス LP 作成</Description>
+            <Title>2018 - 2019</Title>
+            <Description>ラジオ局企画の web サイト作成</Description>
+            <Description>自動車メーカー LP 作成</Description>
+            <Description>アニメーション制作会社ブランドページ作成</Description>
+            <Title>2016 - 2018</Title>
+            <Description>複数のゲームタイトルの LP 作成</Description>
             <Title>2014 -</Title>
             <Description>
               地元、赤羽の絵本屋さんの
@@ -36,7 +35,7 @@ const Work: React.FC = () => {
               >
                 webサイト
               </a>
-              制作
+              作成
             </Description>
           </WorkList>
         }

@@ -10,7 +10,7 @@ export const Title = styled.dt`
   font-size: 2.4rem;
 
   @media (min-width: 768px) {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
   }
 `;
 
